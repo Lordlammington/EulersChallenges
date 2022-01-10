@@ -2,7 +2,7 @@
 using Challenges;
 using NUnit.Framework;
 
-namespace EulerChallengeUnitTests.C3_UnitTest
+namespace ProjectEuler.Challenge3
 {
     [TestFixture]
     class C3_Unit_Test
@@ -10,8 +10,11 @@ namespace EulerChallengeUnitTests.C3_UnitTest
         [Test]
         public void TestFactor()
         {
+            Challenge3 challenge3 = new Challenge3();
             //Call Function with an input of 13195 i expect an output of 29
-            //Assert.AreEqual(29);
+
+            challenge3.InputNumber = 13195;
+            Assert.AreEqual(29, challenge3.RunChallenge(13195));
         }
     }
 }
