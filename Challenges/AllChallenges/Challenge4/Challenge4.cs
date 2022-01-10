@@ -36,15 +36,17 @@ namespace Challenges
 
         public bool IsPalindrome(int input)
         {
-            int rev = 0;
+            int originalNum = input;
+            int reversedNum = 0;
             while (input != 0)
             {   
+                
                 int digit = input % 10;
-                rev = (rev * 10) + digit;
+                reversedNum = (reversedNum * 10) + digit;
                 input /= 10;
             }
 
-            if (input == rev)
+            if (originalNum == reversedNum)
             {
                 return true;
             }
@@ -70,7 +72,7 @@ namespace Challenges
             public bool MoveNext()
             {
                 _Product = _Number1 * _Number2;
-                if (_Number1 == 999 && _Number2 == 999)
+                if (_Number1 > 999 && _Number2 > 999)
                 {
                     return false;
                 }
@@ -79,6 +81,7 @@ namespace Challenges
                     if (_Number1 <= 999)
                     {
                         _Number1++;
+                        
                     }
                     else
                     {
