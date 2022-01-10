@@ -10,7 +10,7 @@ namespace ProjectEuler.Challenge3
         [Test]
         public void TestFactor()
         {
-            Challenge3 challenge3 = new Challenge3();
+            Challenge7 challenge3 = new Challenge7();
             //Call Function with an input of 13195 i expect an output of 29
 
             challenge3.InputNumber = 13195;

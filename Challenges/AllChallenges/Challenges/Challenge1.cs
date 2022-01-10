@@ -14,7 +14,7 @@ namespace Challenges
         public int CalculateUntilNotIncluding { get; set; }
         public int RunChallenge()
         {
-           ShanesNaturalNumbers shanesNaturalNumbers = new ShanesNaturalNumbers();
+           NaturalNumbers shanesNaturalNumbers = new NaturalNumbers();
 
             var sum = shanesNaturalNumbers.TakeWhile(x => x < CalculateUntilNotIncluding).Where(x => (x % 3 == 0) || x % 5 == 0).Sum();
             Console.WriteLine(sum);

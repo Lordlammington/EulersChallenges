@@ -16,7 +16,7 @@ namespace EulerChallengeUnitTests.C1_UnitTest
         [Test]
         public void TestMultiples()
         {
-            ShanesNaturalNumbers shanes = new ShanesNaturalNumbers();
+            NaturalNumbers shanes = new NaturalNumbers();
 
             int shanes123rdnumber = shanes.Skip(4).First();
             
