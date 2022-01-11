@@ -7,6 +7,9 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Threading.Tasks;
 using ProjectEuler;
+using System.Runtime.InteropServices.ComTypes;
+using System.Text;
+
 
 namespace Challenges
 {

@@ -5,8 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectEuler.Enumerators
-{
+namespace ProjectEuler 
+{ 
     public class ThreeDigitMultiplyProducts : IEnumerable<int>
     {
         private class ThreeDigitMultiplyEnumerator : IEnumerator<int>
