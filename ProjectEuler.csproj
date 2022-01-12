@@ -6,18 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="UnitTests\bin\**" />
-    <Compile Remove="UnitTests\ChallengeTests\bin\**" />
-    <Compile Remove="UnitTests\ChallengeTests\obj\**" />
-    <Compile Remove="UnitTests\obj\**" />
-    <EmbeddedResource Remove="UnitTests\bin\**" />
-    <EmbeddedResource Remove="UnitTests\ChallengeTests\bin\**" />
-    <EmbeddedResource Remove="UnitTests\ChallengeTests\obj\**" />
-    <EmbeddedResource Remove="UnitTests\obj\**" />
-    <None Remove="UnitTests\bin\**" />
-    <None Remove="UnitTests\ChallengeTests\bin\**" />
-    <None Remove="UnitTests\ChallengeTests\obj\**" />
-    <None Remove="UnitTests\obj\**" />
+    <Compile Remove="UnitTests\**" />
+    <EmbeddedResource Remove="UnitTests\**" />
+    <None Remove="UnitTests\**" />
   </ItemGroup>
 
   <ItemGroup>
