@@ -33,7 +33,7 @@ namespace ProjectEuler
 
             //896840321048923
 
-            int largestAdjacentSum = from 
+            //int largestAdjacentSum = from; 
 
 
             return 1;

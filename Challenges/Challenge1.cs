@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Challenges;
 using ProjectEuler;
-using ProjectEuler.Challenge1;
 
 namespace Challenges
 {

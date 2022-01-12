@@ -1,20 +1,27 @@
 using System.Linq;
 using Challenges;
 using NUnit.Framework;
+using ProjectEuler;
 
-namespace ProjectEuler.Challenge3
+namespace ProjectEuler
 {
     [TestFixture]
-    class C3_Unit_Test
+    class ThreeDigitProductsTest
     {
         [Test]
-        public void TestFactor()
+        public void TestFirstNumber()
         {
-            Challenge7 challenge3 = new Challenge7();
-            //Call Function with an input of 13195 i expect an output of 29
+            //First Number should be 10000 ( 100 * 100 )
+            ThreeDigitMultiplyProducts threeDigitMultiply = new ThreeDigitMultiplyProducts();
+            Assert.AreEqual(10000, threeDigitMultiply.First());
+        }
 
-            challenge3.InputNumber = 13195;
-            Assert.AreEqual(29, challenge3.RunChallenge());
+        [Test]
+        public void TestLastNumber()
+        {
+            //First Number should be 99801 ( 999 * 999 )
+            ThreeDigitMultiplyProducts threeDigitMultiply = new ThreeDigitMultiplyProducts();
+            Assert.AreEqual(998001, threeDigitMultiply.Last());
         }
     }
 }

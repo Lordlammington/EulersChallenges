@@ -1,20 +1,29 @@
 ﻿using System.Linq;
 using Challenges;
 using NUnit.Framework;
+using ProjectEuler;
 
-
-
-namespace ProjectEuler.Challenge2
+namespace ProjectEuler
 {
     [TestFixture]
-    public class Test
+    public class FibbonacciEnumTest
     {
         [Test]
-        public void TestFibb()
+        public void Test10thFibbonacci()
         {
             FibonacciSequence fib = new FibonacciSequence();
-            int result = fib.Take(10).Last();
-            Assert.AreEqual(89,result);
+            int result = fib.Take(9).Last();
+            Assert.AreEqual(55, result);
         }
+
+        [Test]
+        public void Test20thFibbonacci()
+        {
+            FibonacciSequence fib = new FibonacciSequence();
+            int result = fib.Take(19).Last();
+            Assert.AreEqual(6765, result);
+        }
+
+
     }
 }

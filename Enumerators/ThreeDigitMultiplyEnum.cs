@@ -22,23 +22,24 @@ namespace ProjectEuler
 
             public bool MoveNext()
             {
+
                 _Product = _Number1 * _Number2;
-                if (_Number1 > 999 && _Number2 > 999)
+
+
+                if (_Number1 >= 999 && _Number2 >= 999)
                 {
                     return false;
                 }
+                else if (_Number1 < 999)
+                {
+
+                    _Number1++;
+                    return true;
+                }
                 else
                 {
-                    if (_Number1 <= 999)
-                    {
-                        _Number1++;
-
-                    }
-                    else
-                    {
-                        _Number2++;
-                        _Number1 = _Number2 + 1;
-                    }
+                    _Number2++;
+                    _Number1 = _Number2 + 1;
                     return true;
                 }
             }

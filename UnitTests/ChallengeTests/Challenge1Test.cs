@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using Challenges;
 
-namespace ProjectEuler.Challenge1
+namespace Challenges
 {
     [TestFixture]
     class Challenge1Test

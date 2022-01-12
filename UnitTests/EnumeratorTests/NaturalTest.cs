@@ -5,22 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using Challenges;
-using ProjectEuler.Challenge1;
+using ProjectEuler;
 
-
-namespace EulerChallengeUnitTests.C1_UnitTest
+namespace ProjectEuler
 {
     [TestFixture]
-    class EnumeratorTest
+    class NaturalNumberEnumTest
     {
         [Test]
         public void TestMultiples()
         {
-            NaturalNumbers shanes = new NaturalNumbers();
+            NaturalNumbers natNum = new NaturalNumbers();
 
-            int shanes123rdnumber = shanes.Skip(4).First();
+            int the123rdnumber = natNum.Skip(122).First();
             
-            Assert.AreEqual(123, shanes123rdnumber);
+            Assert.AreEqual(123, the123rdnumber);
 
         }
     }

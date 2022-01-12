@@ -15,17 +15,25 @@ namespace ProjectEuler
             private int _Number1;
             private int _Number2;
 
-            public FibonacciEnumerator()
+            public FibonacciEnumerator()    
             {
                 Reset();
             }
 
             public bool MoveNext()
             {
-                int oldNumber2 = _Number2;
-                _Number2 = _Number1 + _Number2;
-                _Number1 = oldNumber2;
-                return true;
+                if (_Number1 + _Number2 < int.MaxValue)
+                {
+                    int oldNumber2 = _Number2;
+                    _Number2 = _Number1 + _Number2;
+                    _Number1 = oldNumber2;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
             }
 
             public void Reset()
