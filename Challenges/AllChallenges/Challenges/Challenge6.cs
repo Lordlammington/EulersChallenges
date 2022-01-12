@@ -30,7 +30,6 @@ namespace Challenges
                 squareOfTheSum += entry * entry;
             }
 
-            //int[] naturalNumbers = 
             return sumOftheSquares - squareOfTheSum;
         }
     }

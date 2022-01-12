@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Challenges\AllChallenges\ProjectEuler.csproj" />
+    <ProjectReference Include="..\Challenges\AllChallenges\ProjectEuler.csproj" />
   </ItemGroup>
 
 </Project>

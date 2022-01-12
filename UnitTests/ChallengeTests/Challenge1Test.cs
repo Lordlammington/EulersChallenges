@@ -10,7 +10,7 @@ namespace ProjectEuler.Challenge1
         public void TestMultiples()
         {
 
-            Challenges.Challenge1 challenge1 = new Challenges.Challenge1();
+            Challenge1 challenge1 = new Challenge1();
             challenge1.CalculateUntilNotIncluding = 10;
 
             int result = challenge1.RunChallenge();
@@ -22,7 +22,7 @@ namespace ProjectEuler.Challenge1
         public void TestResult()
         {
 
-            Challenges.Challenge1 challenge1 = new Challenges.Challenge1();
+            Challenge1 challenge1 = new Challenge1();
             challenge1.CalculateUntilNotIncluding = 1000;
 
             int result = challenge1.RunChallenge();
