@@ -7,69 +7,28 @@ using System.Threading.Tasks;
 
 namespace ProjectEuler
 {
-    public class PrimeNumbers : IEnumerable<int>
+    public class PrimeNumbers : FilterEnum<long>
     {
-        private class PrimeEnumerator : IEnumerator<int>
+        public PrimeNumbers() : base(new NaturalNumbers(), CheckForPrime)
         {
-            private int _Prime;
-            private int _PossiblePrime;
 
-            public PrimeEnumerator()
-            {
-                Reset();
-            }
-            public bool MoveNext()
-            {
-
-                do
-                {
-                    _PossiblePrime++;
-                } while (CheckForPrime() == false);
-
-
-                _Prime = _PossiblePrime;
-
-
-                return true;
-            }
-
-            public bool CheckForPrime()
-            {
-
-                if (_PossiblePrime <= 1) return false;
-                if (_PossiblePrime == 2) return true;
-                if (_PossiblePrime % 2 == 0) return false;
-
-                var boundary = (int)Math.Floor(Math.Sqrt(_PossiblePrime));
-
-                for (int i = 3; i <= boundary; i += 2)
-                    if (_PossiblePrime % i == 0)
-                        return false;
-
-                return true;
-            }
-
-            public void Reset()
-            {
-                _PossiblePrime = 1;
-            }
-
-            public int Current => _Prime;
-            object IEnumerator.Current => Current;
-            public void Dispose()
-            {
-
-            }
         }
 
-        public IEnumerator<int> GetEnumerator()
+        public static bool CheckForPrime(long naturalNumber)
         {
-            return new PrimeEnumerator();
+
+            if (naturalNumber <= 1) return false;
+            if (naturalNumber == 2) return true;
+            if (naturalNumber % 2 == 0) return false;
+
+            var boundary = (long)Math.Floor(Math.Sqrt(naturalNumber));
+
+            for (long i = 3; i <= boundary; i += 2)
+                if (naturalNumber % i == 0)
+                    return false;
+
+            return true;
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
     }
 }

@@ -12,12 +12,5 @@ namespace ProjectEuler
             PrimeNumbers prime = new PrimeNumbers();
             Assert.AreEqual(11, prime.Take(5).Last());
         }
-
-        [Test]
-        public void TheFirst()
-        {
-            PrimeNumbers prime = new PrimeNumbers();
-            Assert.AreEqual(11, prime.Take(5).Last());
-        }
     }
 }

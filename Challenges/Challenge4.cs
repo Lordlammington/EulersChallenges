@@ -22,7 +22,7 @@ namespace Challenges
         public int _FirstNumber;
         public int _SecondNumber;
         public int _PallindromicNumber;
-        public int RunChallenge()
+        public long RunChallenge()
         {
             // Multiply 2, 3 digit numbers
             // Check if its a palindrome 

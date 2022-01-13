@@ -8,9 +8,9 @@ namespace Challenges
     {
         static void Main(string[] args)
         {
-            new Client().Main();
-            Challenge8 challenge = new Challenge8();
-            challenge._NumberOfAdjacents = 13;
+            //new Client().Main();
+            Challenge3 challenge = new Challenge3();
+            challenge.InputNumber = 600851475143;
             Console.WriteLine("The Result Is: {0}", challenge.RunChallenge());
         }
     }

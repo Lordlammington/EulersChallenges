@@ -9,7 +9,7 @@ namespace ProjectEuler
     public class Challenge7 : IRunChallenge
     {
 
-        public int RunChallenge()
+        public long RunChallenge()
         {
             PrimeNumbers primes = new PrimeNumbers();
 

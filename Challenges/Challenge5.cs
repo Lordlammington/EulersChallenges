@@ -14,7 +14,7 @@ namespace Challenges
         /// What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
         /// </summary>
         public int[] _Divisors; 
-        public int RunChallenge()
+        public long RunChallenge()
         {
             int possibleSmallestMultiple = _Divisors.Max();
             int isTheSmallestMultple = 0;

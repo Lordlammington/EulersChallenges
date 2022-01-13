@@ -18,22 +18,22 @@ namespace Challenges
         /// By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
         /// </summary>
         public int MaxFibbValue { get; set; }   
-        public int RunChallenge()
+        public long RunChallenge()
         {
             FibonacciSequence fibonacci = new FibonacciSequence();
-            var evensum = fibonacci.TakeWhile(number => number < MaxFibbValue).Sum(Predicate);
+            var evensum = fibonacci.TakeWhile(number => number < MaxFibbValue).Where(IsEven).Sum();
 
             return evensum;
         }
 
-        private int Predicate(int x)
+        private bool IsEven(int x)
         {
             if (x % 2 == 0)
             {
-                return x;
+                return true;
             }
 
-            return 0;
+            return false;
         }
     }
 }

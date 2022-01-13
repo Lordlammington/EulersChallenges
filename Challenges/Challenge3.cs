@@ -5,42 +5,23 @@ using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
+using ProjectEuler;
 
-namespace ProjectEuler.Challenge3
+namespace Challenges
 {
-    public class Challenge7 : IRunChallenge
+    public class Challenge3 : IRunChallenge
     {
         /// <summary>
         /// The prime factors of 13195 are 5, 7, 13 and 29.
         /// What is the largest prime factor of the number 600851475143 ?
         /// </summary>
         public long InputNumber { get; set; }
-        public int RunChallenge()
+        public long RunChallenge()
         {
-            PrimeNumbers primes = new PrimeNumbers();
+            LongReverseSegment integerReverse = new LongReverseSegment((long)Math.Ceiling(Math.Sqrt(InputNumber)));
 
-            List<int> allPrimesBelowInput = primes.TakeWhile(number => number < 10000).ToList();
-            List<int> LadderPrimes = new List<int>();
+            return integerReverse.Where(x => InputNumber % x == 0).Where(PrimeNumbers.CheckForPrime).Max();
 
-
-            restart:
-            foreach (int prime in allPrimesBelowInput)
-            {
-                
-                if (InputNumber % prime == 0)
-                {
-                    if (InputNumber == prime)
-                    {
-                        LadderPrimes.Add(prime);
-                        break;
-                    }
-                    
-                    InputNumber = InputNumber / prime;
-                    LadderPrimes.Add(prime);
-                    goto restart;
-                }
-            }
-            return LadderPrimes.Max();
         }
     }
 }

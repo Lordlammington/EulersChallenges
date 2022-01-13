@@ -7,9 +7,9 @@ using ProjectEuler;
 
 namespace ProjectEuler
 {
-    public class NaturalNumbers : IEnumerable<int>
+    public class NaturalNumbers : IEnumerable<long>
     {
-        private class NaturalNumbersEnumerator : IEnumerator<int>
+        private class NaturalNumbersEnumerator : IEnumerator<long>
         {
             public NaturalNumbersEnumerator()
             {
@@ -28,7 +28,7 @@ namespace ProjectEuler
                 Current = 1;
             }
 
-            public int Current { get; private set; }
+            public long Current { get; private set; }
 
             object IEnumerator.Current => Current;
 
@@ -37,7 +37,7 @@ namespace ProjectEuler
 
             }
         }
-        public IEnumerator<int> GetEnumerator()
+        public IEnumerator<long> GetEnumerator()
         {
             return new NaturalNumbersEnumerator();
         }

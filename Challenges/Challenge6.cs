@@ -17,7 +17,7 @@ namespace Challenges
         /// </summary>
         
         public int _SquareDifference;
-        public int RunChallenge()
+        public long RunChallenge()
         {
             List<int> squares = new List<int>();
             int remainingNumtoAdd = _SquareDifference;

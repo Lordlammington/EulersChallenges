@@ -8,6 +8,6 @@ namespace ProjectEuler
 {
     interface IRunChallenge
     {
-        public int RunChallenge();
+        public long RunChallenge();
     }
 }

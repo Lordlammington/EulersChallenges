@@ -15,11 +15,11 @@ namespace Challenges
         /// Find the sum of all the multiples of 3 or 5 below 1000.
         /// </summary>
         public int CalculateUntilNotIncluding { get; set; }
-        public int RunChallenge()
+        public long RunChallenge()
         {
            NaturalNumbers shanesNaturalNumbers = new NaturalNumbers();
 
-            var sum = shanesNaturalNumbers.TakeWhile(x => x < CalculateUntilNotIncluding).Where(x => (x % 3 == 0) || x % 5 == 0).Sum();
+            long sum = shanesNaturalNumbers.TakeWhile(x => x < CalculateUntilNotIncluding).Where(x => (x % 3 == 0) || x % 5 == 0).Sum();
             Console.WriteLine(sum);
             return sum;
         }
