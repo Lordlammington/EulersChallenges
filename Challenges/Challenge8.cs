@@ -8,7 +8,7 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectEuler
+namespace Challenges
 {
     public class Challenge8 : IRunChallenge
     {
@@ -31,12 +31,22 @@ namespace ProjectEuler
 
             BigListOfDigits.Reverse();
 
-            //896840321048923
+            int toskip = 0;
+            int highestProductOfAdjacents = 0;
+            int numberOftimestoIterate = BigListOfDigits.Count() - _NumberOfAdjacents;
 
-            //int largestAdjacentSum = from; 
+            while (numberOftimestoIterate > 0)
+            {
+                int productOfAdjacents = BigListOfDigits.Skip(toskip).Take(_NumberOfAdjacents).Aggregate((number1, number2) => number1 * number2);
+                toskip++;
 
+                if (highestProductOfAdjacents < productOfAdjacents)
+                {
+                    highestProductOfAdjacents = productOfAdjacents;
+                }
+            }
 
-            return 1;
+            return highestProductOfAdjacents;
         }
     }
 }
