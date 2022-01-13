@@ -10,7 +10,7 @@ namespace Challenges
         {
             new Client().Main();
             Challenge8 challenge = new Challenge8();
-            //challenge._SquareDifference = 100;
+            challenge._NumberOfAdjacents = 13;
             Console.WriteLine("The Result Is: {0}", challenge.RunChallenge());
         }
     }

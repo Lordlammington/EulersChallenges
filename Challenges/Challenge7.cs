@@ -1,21 +1,19 @@
-﻿using ProjectEuler.Challenge3;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace ProjectEuler
 {
+    /// <summary>
+    /// By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+    /// What is the 10 001st prime number?
+    /// </summary>
     public class Challenge7 : IRunChallenge
     {
+
         public int RunChallenge()
         {
             PrimeNumbers primes = new PrimeNumbers();
 
-            return primes.Take(10001).Last();
+            return primes.Skip(10000).First();
         }
     }
 }
