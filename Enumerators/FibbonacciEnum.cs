@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ProjectEuler;
 
-namespace ProjectEuler
+namespace Enumerators
 {
     public class FibonacciSequence : IEnumerable<int>
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using ProjectEuler;
 
-namespace ProjectEuler
+namespace Enumerators
 {
     public class NaturalNumbers : IEnumerable<long>
     {

@@ -1,7 +1,10 @@
 ﻿using System.Linq;
 using NUnit.Framework;
+using Challenges;
+using ProjectEuler;
+using Enumerators;
 
-namespace ProjectEuler
+namespace EnumeratorTests
 {
     [TestFixture]
     class PrimeNumberEnumTest

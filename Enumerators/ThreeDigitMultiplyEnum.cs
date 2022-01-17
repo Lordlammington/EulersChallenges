@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectEuler 
+namespace Enumerators
 { 
     public class ThreeDigitMultiplyProducts : IEnumerable<int>
     {
@@ -25,7 +25,7 @@ namespace ProjectEuler
 
                 _Product = _Number1 * _Number2;
 
-
+                
                 if (_Number1 >= 999 && _Number2 >= 999)
                 {
                     return false;

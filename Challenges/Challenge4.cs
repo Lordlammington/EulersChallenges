@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Threading.Tasks;
 using ProjectEuler;
+using Enumerators;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 
@@ -27,8 +28,8 @@ namespace Challenges
             // Multiply 2, 3 digit numbers
             // Check if its a palindrome 
             // If it is Add to a list
-            ThreeDigitMultiplyProducts multiplyProducts = new ThreeDigitMultiplyProducts();
-            List<int> pallindromicNumbers = new List<int>();
+            ThreeDigitMultiplyProducts multiplyProducts = new();
+            List<int> pallindromicNumbers = new();
 
             foreach (int number in multiplyProducts.AsEnumerable())
             {

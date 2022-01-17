@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ProjectEuler;
+using Enumerators;
 
 namespace Challenges
 {
@@ -16,31 +17,27 @@ namespace Challenges
         public int[] _Divisors; 
         public long RunChallenge()
         {
-            int possibleSmallestMultiple = _Divisors.Max();
-            int isTheSmallestMultple = 0;
+            //call naturalnumber enum
+            NaturalNumbers natnum = new NaturalNumbers();
 
-            restart:
-            foreach (int divisor in _Divisors)
+
+            return natnum.Where(x => DivIntoArrayRemainderCheck(x)).First();
+
+
+            bool DivIntoArrayRemainderCheck(long input)
             {
-                if (possibleSmallestMultiple % divisor == 0)
+               
+                foreach (int divisor in _Divisors)
                 {
-                    isTheSmallestMultple++;
+                    //mod the number by each number in the array
+                    if (input % divisor != 0)
+                    {
+                        return false;
+                    }
                 }
+                return true;
             }
 
-            if (isTheSmallestMultple != _Divisors.Length)
-            {
-                isTheSmallestMultple = 0;
-                possibleSmallestMultiple++;
-                goto restart;
-            }
-
-
-
-
-            //Define any set of whole numbers 
-            //iterate a function that checks 
-            return possibleSmallestMultiple;
         }
     }
 }

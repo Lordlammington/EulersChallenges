@@ -1,9 +1,10 @@
 ﻿using System.Linq;
-using Challenges;
 using NUnit.Framework;
+using Challenges;
 using ProjectEuler;
+using Enumerators;
 
-namespace ProjectEuler
+namespace EnumeratorTests
 {
     [TestFixture]
     public class FibbonacciEnumTest

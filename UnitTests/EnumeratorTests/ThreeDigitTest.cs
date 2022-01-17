@@ -1,9 +1,10 @@
 using System.Linq;
-using Challenges;
 using NUnit.Framework;
+using Challenges;
 using ProjectEuler;
+using Enumerators;
 
-namespace ProjectEuler
+namespace EnumeratorTests
 {
     [TestFixture]
     class ThreeDigitProductsTest
@@ -13,7 +14,7 @@ namespace ProjectEuler
         {
             //First Number should be 10000 ( 100 * 100 )
             ThreeDigitMultiplyProducts threeDigitMultiply = new ThreeDigitMultiplyProducts();
-            Assert.AreEqual(10000, threeDigitMultiply.First());
+            Assert.AreEqual(10000, threeDigitMultiply.Min());
         }
 
         [Test]
@@ -21,7 +22,7 @@ namespace ProjectEuler
         {
             //First Number should be 99801 ( 999 * 999 )
             ThreeDigitMultiplyProducts threeDigitMultiply = new ThreeDigitMultiplyProducts();
-            Assert.AreEqual(998001, threeDigitMultiply.Last());
+            Assert.AreEqual(998001, threeDigitMultiply.Max());
         }
     }
 }

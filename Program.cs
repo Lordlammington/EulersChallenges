@@ -9,8 +9,8 @@ namespace Challenges
         static void Main(string[] args)
         {
             //new Client().Main();
-            Challenge3 challenge = new Challenge3();
-            challenge.InputNumber = 600851475143;
+            Challenge5 challenge = new Challenge5();
+            challenge._Divisors = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             Console.WriteLine("The Result Is: {0}", challenge.RunChallenge());
         }
     }

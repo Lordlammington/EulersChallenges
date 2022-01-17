@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using ProjectEuler;
 
-namespace ProjectEuler
+namespace Enumerators
 {
     public class LongReverseSegment : IEnumerable<long>
     {
@@ -66,8 +63,5 @@ namespace ProjectEuler
         {
             return GetEnumerator();
         }
-    }
-
-
-    
+    } 
 }

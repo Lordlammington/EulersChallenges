@@ -20,7 +20,7 @@ namespace Challenges
         {
             LongReverseSegment integerReverse = new LongReverseSegment((long)Math.Ceiling(Math.Sqrt(InputNumber)));
 
-            return integerReverse.Where(x => InputNumber % x == 0).Where(PrimeNumbers.CheckForPrime).Max();
+            return integerReverse.Where(x => InputNumber % x == 0).Where(PrimeNumbers.CheckForPrime).First();
 
         }
     }
