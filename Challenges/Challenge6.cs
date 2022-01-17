@@ -20,13 +20,12 @@ namespace Challenges
         public long RunChallenge()
         {
             List<int> squares = new List<int>();
-            int remainingNumtoAdd = _SquareDifference;
             do
             {
-                squares.Add(remainingNumtoAdd);
-                remainingNumtoAdd--;
+                squares.Add(_SquareDifference);
+                _SquareDifference--;
 
-            } while (remainingNumtoAdd > 0);
+            } while (_SquareDifference > 0);
 
             int sumOftheSquares = squares.Sum() * squares.Sum();
 

@@ -47,23 +47,18 @@ namespace Challenges
             {
                 BigInteger digit = number % 10;
                 number /= 10;
-                BigListOfDigits.Add((int)digit);
+                BigListOfDigits.Insert(0, (int)digit);
             }
 
-            BigListOfDigits.Reverse();
+            List<BigInteger> allProductsOfAdjacents = new();
 
-            int toskip = 0;
-            List<long> allProductsOfAdjacents = new List<long>();
-            int numberOftimestoIterate = BigListOfDigits.Count();
-
-            while (numberOftimestoIterate > 0)
+            while (BigListOfDigits.Count() >= _NumberOfAdjacents)
             {
-                allProductsOfAdjacents.Add(BigListOfDigits.Skip(toskip).Take(_NumberOfAdjacents).Aggregate((number1, number2) => number1 * number2));
-                numberOftimestoIterate--;
-                toskip++;
+                allProductsOfAdjacents.Add(BigListOfDigits.Take(_NumberOfAdjacents).Aggregate((number1, number2) => number1 * number2));
+                BigListOfDigits.RemoveAt(0);
             }
-
-            return allProductsOfAdjacents.Max();
+            BigInteger chonky = allProductsOfAdjacents.Max();
+            return 10;
         }
     }
 }
