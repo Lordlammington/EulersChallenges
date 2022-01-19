@@ -1,5 +1,7 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using Challenges;
+using ProjectEuler.Challenges;
 
 namespace ChallengeTests
 {
@@ -10,7 +12,7 @@ namespace ChallengeTests
         public void Test4Adjacents()
         {
             Challenge8 challenge8 = new Challenge8();
-            challenge8._NumberOfAdjacents = 4;
+            challenge8.NumberOfAdjacent = 4;
             Assert.AreEqual(5832, challenge8.RunChallenge());
         }
 
@@ -18,8 +20,16 @@ namespace ChallengeTests
         public void Test13Adjacents()
         {
             Challenge8 challenge8 = new Challenge8();
-            challenge8._NumberOfAdjacents = 13;
-            Assert.AreEqual(100, challenge8.RunChallenge());
+            challenge8.NumberOfAdjacent = 13;
+            Assert.AreEqual(23514624000, challenge8.RunChallenge());
+        }
+
+        [Test]
+        public void Test20Adjacents()
+        {
+            Challenge8 challenge8 = new Challenge8();
+            challenge8.NumberOfAdjacent = 20;
+            Assert.AreEqual(240789749760000, challenge8.RunChallenge());
         }
     }
 }
