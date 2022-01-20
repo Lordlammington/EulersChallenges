@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using System.Threading.Tasks;
-using ProjectEuler;
 using Enumerators;
 
-namespace Challenges
+namespace ProjectEuler.Challenges
 {
     public class Challenge3 : IRunChallenge
     {

@@ -88,21 +88,21 @@ namespace Challenges
 
             } while (diagonalOffset <= array.GetLength(0) - _AdjacentsToFind);
 
-            //Find each diagonal sum
-            int reversediagonalOffset = 0;
+            //Find each reverse  diagonal sum
+            int reverseDiagonalOffset = 0;
             do
             {
                 for (long i = _AdjacentsToFind; i <= array.GetLength(1); i++)
                 {
                     var revdiag = Enumerable.Range(0, _AdjacentsToFind)
-                    .Select(x => array[x + reversediagonalOffset, x - i])
+                    .Select(x => array[i - x - 1, x + reverseDiagonalOffset ])
                     .ToArray();
 
                     AllProducts.Add(revdiag.Take(_AdjacentsToFind).Aggregate((number1, number2) => number1 * number2));
                 }
-                reversediagonalOffset++;
+                reverseDiagonalOffset++;
 
-            } while (diagonalOffset <= array.GetLength(0) - _AdjacentsToFind);
+            } while (reverseDiagonalOffset <= array.GetLength(0) - _AdjacentsToFind);
 
 
 

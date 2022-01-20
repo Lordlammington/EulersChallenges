@@ -11,7 +11,7 @@ namespace ChallengeTests
         {
             Challenge11 challenge11 = new Challenge11();
             challenge11._AdjacentsToFind = 4;
-            Assert.AreEqual(1788696, challenge11.RunChallenge());
+            Assert.AreEqual(70600674, challenge11.RunChallenge());
         }
     }
 }

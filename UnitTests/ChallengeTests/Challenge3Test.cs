@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using Challenges;
+using ProjectEuler.Challenges;
 
 namespace ChallengeTests
 {
