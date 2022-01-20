@@ -27,7 +27,7 @@ namespace ProjectEuler.Challenges
                 int numberOfDivisorsfound = 0;
 
 
-                for (int i = 1; i < trinum; i++)
+                for (int i = 1; i <= trinum; i++)
                 {
                     if (trinum % i == 0)
                     {
