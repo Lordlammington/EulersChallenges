@@ -21,5 +21,13 @@ namespace EnumeratorTests
             TriangleNumbers triangleNumbers = new TriangleNumbers();
             Assert.AreEqual(3240, triangleNumbers.Take(80).Last());
         }
+
+        [Test]
+        public void TriangleNumberThatEquals76576500()
+        {
+            TriangleNumbers triangleNumbers = new TriangleNumbers();
+            long foo = triangleNumbers.TakeWhile(x => x <= 76576500).Count();
+            Assert.AreEqual(3240, foo);
+        }
     }
 }
