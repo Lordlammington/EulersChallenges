@@ -28,10 +28,9 @@ namespace Challenges
             // Multiply 2, 3 digit numbers
             // Check if its a palindrome 
             // If it is Add to a list
-            ThreeDigitMultiplyProducts multiplyProducts = new();
             List<int> pallindromicNumbers = new();
 
-            foreach (int number in multiplyProducts.AsEnumerable())
+            foreach (int number in ThreeDigitProducts.Sequence().AsEnumerable())
             {
                 if (IsPalindrome(number))
                 {

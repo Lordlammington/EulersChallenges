@@ -6,67 +6,32 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Enumerators
-{ 
-    public class ThreeDigitMultiplyProducts : IEnumerable<int>
+{
+    public class ThreeDigitProducts
     {
-        private class ThreeDigitMultiplyEnumerator : IEnumerator<int>
+        public static IEnumerable<long> Sequence()
         {
-            private int _Number1;
-            private int _Number2;
-            private int _Product;
-
-            public ThreeDigitMultiplyEnumerator()
+            long number1 = 100;
+            long number2 = 100;
+            bool hasReachedLimit = false;
+            do
             {
-                Reset();
-            }
+                yield return number1 * number2;
 
-            public bool MoveNext()
-            {
+                number1++;
 
-                _Product = _Number1 * _Number2;
-
-                
-                if (_Number1 >= 999 && _Number2 >= 999)
+                if (number1 == 1000)
                 {
-                    return false;
+                    number2++;
+                    number1 = 100;
                 }
-                else if (_Number1 < 999)
+
+                if (number2 == 1000 )
                 {
-
-                    _Number1++;
-                    return true;
+                    hasReachedLimit = true;
                 }
-                else
-                {
-                    _Number2++;
-                    _Number1 = _Number2 + 1;
-                    return true;
-                }
-            }
 
-            public void Reset()
-            {
-                _Number1 = 100;
-                _Number2 = 100;
-            }
-
-            public int Current => _Product;
-
-            object IEnumerator.Current => Current;
-
-            public void Dispose()
-            {
-            }
-        }
-
-        public IEnumerator<int> GetEnumerator()
-        {
-            return new ThreeDigitMultiplyEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
+            } while (!hasReachedLimit);
         }
     }
 }
