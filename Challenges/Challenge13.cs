@@ -12,7 +12,7 @@ namespace ProjectEuler.Challenges
     {
         List<string> BigListOfIntegerStrings = new List<string>()
         {
-            "46376937677490009712648124896970078050417018260538",
+            "37107287533902102798797998220837590246510135740250",
             "46376937677490009712648124896970078050417018260538",
             "74324986199524741059474233309513058123726617309629",
             "91942213363574161572522430563301811072406154908250",
@@ -136,12 +136,14 @@ namespace ProjectEuler.Challenges
             }
 
             EveryDigit.Reverse();
+
             long num = 0;
+
             foreach (var digit in EveryDigit.Take(_howManyFirstDigits))
             {
                 num = (num * 10) + digit;
             }
-            var foo = EveryDigit.Take(_howManyFirstDigits);
+
             return num;
         }
     }

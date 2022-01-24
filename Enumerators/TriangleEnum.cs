@@ -6,47 +6,23 @@ using System.Runtime.InteropServices.ComTypes;
 
 namespace Enumerators
 {
-    public class TriangleNumbers : IEnumerable<long>
+
+    public class TriangleNumbers
     {
-        private class TriangleNumberEnumerator : IEnumerator<long>
+
+        public static IEnumerable<long> Sequence()
         {
-            private long _triangleNumber;
-            private long _countUpTo;
+            NaturalNumbers naturalNumbers = new NaturalNumbers();
+            long rowAddend = default;
 
-            public TriangleNumberEnumerator()
+            do
             {
-                Reset();
-            }
 
-            public bool MoveNext()
-            {
-                NaturalNumbers naturalNumbers = new NaturalNumbers();
-                _triangleNumber = naturalNumbers.Take((int)_countUpTo + 1).Sum();
-                _countUpTo++;
-                return true;
-            }
+                long triangleNumber = naturalNumbers.Take((int) rowAddend + 1).Sum();
+                rowAddend++;
+                yield return triangleNumber;
 
-            public void Reset()
-            {
-            _countUpTo = 0;
-            }
-
-            public long Current => _triangleNumber;
-
-            object IEnumerator.Current => Current;
-
-            public void Dispose()
-            {
-            }
-        }
-        public IEnumerator<long> GetEnumerator()
-        {
-            return new TriangleNumberEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
+            } while (true);
         }
     }
 }

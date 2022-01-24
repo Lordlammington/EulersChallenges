@@ -11,23 +11,19 @@ namespace EnumeratorTests
         [Test]
         public void SeventhTriangleNumber()
         {
-            TriangleNumbers triangleNumbers = new TriangleNumbers();
-            Assert.AreEqual(28, triangleNumbers.Take(7).Last());
+            Assert.AreEqual(28, TriangleNumbers.Sequence().Take(7).Last());
         }
 
         [Test]
         public void EightiethTriangleNumber()
         {
-            TriangleNumbers triangleNumbers = new TriangleNumbers();
-            Assert.AreEqual(3240, triangleNumbers.Take(80).Last());
+            Assert.AreEqual(3240, TriangleNumbers.Sequence().Take(80).Last());
         }
 
         [Test]
         public void TriangleNumberThatEquals76576500()
         {
-            TriangleNumbers triangleNumbers = new TriangleNumbers();
-            long foo = triangleNumbers.TakeWhile(x => x <= 76576500).Count();
-            Assert.AreEqual(3240, foo);
+            Assert.AreEqual(3240, TriangleNumbers.Sequence().TakeWhile(x => x <= 76576500).Count());
         }
     }
 }

@@ -13,9 +13,11 @@ namespace ProjectEuler.Challenges
         public long InputNumber { get; set; }
         public long RunChallenge()
         {
-            LongReverseSegment integerReverse = new LongReverseSegment((long)Math.Ceiling(Math.Sqrt(InputNumber)));
-
-            return integerReverse.Where(x => InputNumber % x == 0).Where(PrimeNumbers.CheckForPrime).First();
+            return NaturalNumberCountdown
+                .Sequence((long)Math.Ceiling(Math.Sqrt(InputNumber)))
+                    .Where(x => InputNumber % x == 0)
+                    .Where(PrimeNumbers.CheckForPrime)
+                    .First();
 
         }
     }
