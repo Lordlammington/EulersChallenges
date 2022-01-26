@@ -12,6 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove=".gitattributes" />
+    <None Remove=".gitignore" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="xunit.extensibility.core" Version="2.4.1" />
   </ItemGroup>
 

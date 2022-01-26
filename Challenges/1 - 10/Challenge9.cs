@@ -35,14 +35,7 @@ namespace ProjectEuler
 
             var euclidList = new {n = naturalNumbers.Take(Number) , m = naturalNumbers.Take(Number) };
 
-
-
-           
-
-
-
             return 10;
-
 
 
         }

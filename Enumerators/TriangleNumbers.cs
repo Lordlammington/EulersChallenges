@@ -17,7 +17,6 @@ namespace Enumerators
 
             do
             {
-
                 long triangleNumber = naturalNumbers.Take((int) rowAddend + 1).Sum();
                 rowAddend++;
                 yield return triangleNumber;

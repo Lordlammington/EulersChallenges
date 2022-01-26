@@ -10,8 +10,9 @@ namespace Enumerators
         {
             do
             {
-                startingNum--;
                 yield return startingNum;
+                startingNum--;
+                
             } while (startingNum > 0);
         }
     }

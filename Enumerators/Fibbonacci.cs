@@ -19,6 +19,7 @@ namespace Enumerators
             {
                 long oldNumber2 = secondaryTerm;
                 secondaryTerm = primaryTerm + secondaryTerm;
+                yield return secondaryTerm;
                 primaryTerm = oldNumber2;
 
             } while (true);

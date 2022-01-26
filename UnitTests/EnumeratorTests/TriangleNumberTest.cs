@@ -19,11 +19,5 @@ namespace EnumeratorTests
         {
             Assert.AreEqual(3240, TriangleNumbers.Sequence().Take(80).Last());
         }
-
-        [Test]
-        public void TriangleNumberThatEquals76576500()
-        {
-            Assert.AreEqual(3240, TriangleNumbers.Sequence().TakeWhile(x => x <= 76576500).Count());
-        }
     }
 }
