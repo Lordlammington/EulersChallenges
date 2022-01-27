@@ -2,7 +2,7 @@
 using Challenges;
 using ProjectEuler.Challenges;
 
-namespace ChallengeTests
+namespace Challenges1To10
 {
     [TestFixture]
     class Challenge3Test

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChallengeTests
+namespace Challenges11To20
 {
     [TestFixture]
     class Challenge15Test

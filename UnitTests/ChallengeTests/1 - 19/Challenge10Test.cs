@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using Challenges;
 
-namespace ChallengeTests
+namespace Challenges1To10
 {
     [TestFixture]
     class Challenge10Test

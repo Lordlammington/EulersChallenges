@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using ProjectEuler.Challenges;
 
-namespace ChallengeTests
+namespace Challenges11To20
 {
     [TestFixture]
     public class Challenge13Test

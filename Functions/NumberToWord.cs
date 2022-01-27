@@ -1,70 +1,69 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ProjectEuler.Functions
+namespace Functions
 {
-    class NumberToWord
+    public static class NumberToWord
     {
+        private static readonly string[] Units = 
+            { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
 
-        /// zero
-        /// one, two, three, four, five, six, seven, eight, nine, 
-        /// ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineten, 
-        /// twenty
-        /// thirty
-        /// fourty
-        /// fifty
-        /// sixty
-        /// seventy
-        /// eighty
-        /// ninety
-        /// hundred
-        /// thousand
-        /// 
-
+        private static readonly string[] Tens =
+            {"", "" , "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety", "Hundred"};
 
 
         public static string AsAFullWord(long number)
         {
 
-            switch (number)
-            {
-                case 0;
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 9:
-                case 10:
-                case 11:
-                case 12:
-                case 13:
-                case 14:
-                case 15:
-                case 16:
-                case 17:
-                case 19:
-                case 20:
 
+            if (number == 0)
+                return "zero";
+
+            if (number < 0)
+                return "minus " + AsAFullWord(Math.Abs(number));
+
+            string words = "";
+
+            if ((number / 1000000) > 0)
+            {
+               words += AsAFullWord(number / 1000000) + " Million ";
+                number %= 1000000;
             }
 
-
-
-            if ( number == 0)
+            if ((number / 1000) > 0)
             {
-                return "Zero";
+                words += AsAFullWord(number / 1000) + " Thousand ";
+                number %= 1000;
             }
+
+            if ((number / 100) > 0)
+            {
+                words += AsAFullWord(number / 100) + " Hundred ";
+                number %= 100;
+            }
+
+            if (number > 0)
+            {
+                if (words != "")
+                    words += "and ";
+
+
+
+                if (number < 20)
+                    words += Units[number];
+                else
+                {
+                    words += Tens[number / 10];
+                    if ((number % 10) > 0)
+                        words += " " + Units[number % 10];
+                }
+            }
+
+            return words;
         }
 
-        public static string NumberOfCharacters(long number)
+        public static long NumberOfCharacters(long number)
         {
-            return "foo";
+            return AsAFullWord(number).Replace(" ", "").Length;
         }
     }
 }

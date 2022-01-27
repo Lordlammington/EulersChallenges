@@ -2,7 +2,7 @@
 using ProjectEuler.Challenges;
 
 
-namespace ChallengeTests
+namespace Challenges11To20
 {
     [TestFixture]
     public class Challenge12Test

@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using Challenges;
 
-namespace ChallengeTests
+namespace Challenges11To20
 {
     [TestFixture]
     class Challenge11Test
