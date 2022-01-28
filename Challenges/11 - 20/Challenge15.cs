@@ -2,8 +2,6 @@
 using Functions;
 using ProjectEuler;
 using System.Linq;
-using Functions;
-using ProjectEuler;
 
 namespace Challenges
 {

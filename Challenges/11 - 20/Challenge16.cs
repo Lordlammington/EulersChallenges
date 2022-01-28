@@ -2,10 +2,7 @@
 using Functions;
 using ProjectEuler;
 using System.Linq;
-using Functions;
-using ProjectEuler;
 using System;
-using ProjectEuler;
 using System.Numerics;
 
 namespace Challenges

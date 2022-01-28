@@ -9,7 +9,7 @@ namespace Functions
 {
     public static class Divisors
     {
-        public static long count(long input)
+        public static long Count(long input)
         {
             int numberOfDivisors = 0;
             int sqrt = (int)Math.Sqrt(input);
@@ -28,6 +28,21 @@ namespace Functions
             }
 
             return numberOfDivisors;
+        }
+
+        public static List<long> List(long input)
+        {
+            List<long> listOfOfDivisors = new List<long>();
+
+            for (int i = 1; i <= input; i++)
+            {
+                if (input % i == 0)
+                {
+                    listOfOfDivisors.Add(i);
+                }
+            }
+
+            return listOfOfDivisors;
         }
     }
 }

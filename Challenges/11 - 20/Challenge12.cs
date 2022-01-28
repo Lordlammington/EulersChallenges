@@ -17,14 +17,14 @@ namespace ProjectEuler.Challenges
         {
             //TriangleNumbers.Sequence()
             
-            var thing = TriangleNumbers.Sequence().Take(7);
+            //var thing = TriangleNumbers.Sequence().Take(7);
 
             //return thing.TakeUntil(7).Where(x => _UpToDivisors % x == 0).Where(PrimeNumbers.CheckForPrime).First();
 
             //I SWEAR i could do this with a take while but for now i'm doing to with a nested loop
-            int counter = 0;
+            //int counter = 0;
 
-            long foo = 1;
+            //long foo = 1;
 
             //triangleNumbers.TakeWhile(x => x * x <= _UpToDivisors).Where(y => DivisibleBy(number, y)).GetNaturalNumbersRay().TakeWhile(x => x * x <= number).Where(y => DivisibleBy(number, y))
 

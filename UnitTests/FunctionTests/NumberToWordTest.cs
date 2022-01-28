@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Functions;
+﻿using Functions;
 using NUnit.Framework;
-using Functions;
-using Xunit.Sdk;
 
 
 namespace FunctionTests
