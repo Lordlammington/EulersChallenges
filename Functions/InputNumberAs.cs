@@ -16,7 +16,7 @@ namespace Functions
             while (!inputNumber.IsZero)
             {
 
-                BigInteger digit = inputNumber % 10;
+                var digit = inputNumber % 10;
                 everyDigit.Add((long)digit);
                 inputNumber /= 10;
             }
@@ -32,7 +32,7 @@ namespace Functions
             while (!inputNumber.IsZero)
             {
 
-                BigInteger digit = inputNumber % 10;
+                var digit = inputNumber % 10;
                 everyDigit.Add((long)digit);
                 inputNumber /= 10;
             }

@@ -12,12 +12,11 @@ namespace ProjectEuler.Enumerators
         {
             //count up to Calculate until
             //Get a list of all divisors, and sum them
+            //Check 
 
             do
             { 
                 long[] AmicablePair;
-
-
 
 
 
