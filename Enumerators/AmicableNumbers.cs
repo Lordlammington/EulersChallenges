@@ -10,7 +10,7 @@ namespace ProjectEuler.Enumerators
 {
     public static class AmicableNumbers
     {
-        public static List<long[]> List(this long calculateUntil)
+        public static Dictionary<long, long> List(this long calculateUntil)
         {
             //count up to Calculate until
             //Get a list of all divisors, and sum them
@@ -20,27 +20,73 @@ namespace ProjectEuler.Enumerators
             //find some way to verify if numbers are Amicable
             NaturalNumbers natural = new NaturalNumbers();
 
-            var seedSetA = natural.Take((int)calculateUntil);
-            var seedSetB = natural.Take((int)calculateUntil);
+            Dictionary<long, long> DivisorPairs = new Dictionary<long, long>();
+            Dictionary<long, long> AmicablePairs = new Dictionary<long, long>();
+            long foo = 0;
 
-
-            List<long[]> PairsOfAmicableNumbers = new List<long[]>();
-
-
-            foreach (var seedNumberA in seedSetA)
+            foreach (var natnumber in natural.Take((int)calculateUntil))
             {
-                foreach (var seedNumberB in seedSetB)
-                {
-                    if (IsAmicable(seedNumberA, seedNumberB))
-                    {
-                        PairsOfAmicableNumbers.Add(new[] {seedNumberA, seedNumberB});
-                    }
+                DivisorPairs.Add(natnumber, Divisors.List(natnumber).SkipLast(1).Sum());
+            }
 
+            foreach (var x in DivisorPairs)
+            {
+                if (x.Key == 0 || x.Value == 0 || x.Key > calculateUntil || x.Value > calculateUntil )
+                {
+                    continue;
+                }
+
+                long a = DivisorPairs[x.Key];
+                bool donotskip = true;
+                
+
+
+                if (x.Key == DivisorPairs[a] && x.Key != x.Value && foo != x.Key)
+                {
+                    //CHERCK FOR DUPLICATE
+                    AmicablePairs.Add(x.Key, x.Value);
+                    foo = x.Value;
                 }
 
             }
 
-            return PairsOfAmicableNumbers;
+           
+
+            //Amicable number
+            // x = y
+           
+
+
+
+            //foreach (var seedNumberA in seedSetA)
+            //{
+            //    foreach (var seedNumberB in seedSetB)
+            //    {
+            //        if (IsAmicable(seedNumberA, seedNumberB))
+            //        {
+            //            PairsOfAmicableNumbers.Add(new[] {seedNumberA, seedNumberB});
+            //        }
+
+            //    }
+
+            //}
+
+
+
+
+
+            return AmicablePairs;
+
+
+            //Get a list of all natural numbers up to the input number
+
+
+
+
+
+
+
+
         }
 
         public static bool IsAmicable(long A, long B)

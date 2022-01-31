@@ -16,11 +16,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="ChallengeTests\TemplateTest.cs" />
+    <Compile Remove="ChallengeTests\Template.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="ChallengeTests\TemplateTest.cs" />
+    <None Include="ChallengeTests\Template.cs" />
   </ItemGroup>
 
   <ItemGroup>
