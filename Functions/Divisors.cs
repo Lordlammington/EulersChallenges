@@ -12,7 +12,7 @@ namespace Functions
         public static long Count(long input)
         {
             int numberOfDivisors = 0;
-            int sqrt = (int)Math.Sqrt(input);
+            int sqrt = (int) Math.Sqrt(input);
 
             for (int i = 1; i <= sqrt; i++)
             {
@@ -43,6 +43,49 @@ namespace Functions
             }
 
             return listOfOfDivisors;
+        }
+
+        public static bool IsPerfectNumber(long input)
+        {
+            List<long> listOfOfDivisors = new List<long>();
+
+            for (int i = 1; i <= input; i++)
+            {
+                if (input % i == 0 && i != input)
+                {
+                    listOfOfDivisors.Add(i);
+                }
+            }
+
+            if (listOfOfDivisors.Sum() == input)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static bool IsAbundantNumber(long input)
+        {
+            List<long> listOfOfDivisors = new List<long>();
+
+            for (int i = 1; i <= input; i++)
+            {
+                if (input % i == 0 && i != input)
+                {
+                    listOfOfDivisors.Add(i);
+                }
+            }
+
+            if (listOfOfDivisors.Sum() > input)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

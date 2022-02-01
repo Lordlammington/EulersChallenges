@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 namespace Challenges21To30
 {
     [TestFixture]
-    class Challenge22Test
+    class Challenge23Test
     {
         [Test]
-        public void NameScores()
+        public void NonAbundantSums()
         {
-            Challenge22 challenge = new Challenge22();
-            Assert.AreEqual(871198282, challenge.RunChallenge());
+            Challenge23 challenge = new Challenge23();
+            Assert.AreEqual(10, challenge.RunChallenge());
         }
     }
 }

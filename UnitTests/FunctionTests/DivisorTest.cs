@@ -45,5 +45,17 @@ namespace FunctionTests
             var divlist = Divisors.List(97);
             Assert.AreEqual(2, divlist.Count);
         }
+
+        [Test]
+        public void TestForPerfectNumberTrue() //Prime Number
+        {
+            Assert.AreEqual(true, Divisors.IsPerfectNumber(28));
+        }
+
+        [Test]
+        public void TestForPerfectNumberFalse() //Prime Number
+        {
+            Assert.AreEqual(false, Divisors.IsPerfectNumber(37));
+        }
     }
 }
