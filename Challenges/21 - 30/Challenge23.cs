@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using Enumerators;
@@ -18,8 +19,8 @@ namespace Challenges
             NaturalNumbers naturalNumbers = new NaturalNumbers();
 
             var integers = naturalNumbers.Take(28123);
-            List<long> AbundantSums = new List<long>();
-
+            
+            List<long> Abundants = new List<long>();
 
             foreach (var integer in integers)
             {
@@ -27,20 +28,43 @@ namespace Challenges
                 //Get number
                 if (Divisors.IsAbundantNumber(integer))
                 {
-                    AbundantSums.Add(integer + integer);
+                    Abundants.Add(integer);
                 }
-                else
+
+            }
+
+            bool[] canBeWrittenasAbundent = new bool[28123 + 1];
+
+            for (int i = 0; i < Abundants.Count; i++)
+            {
+                for (int j = i; j < Abundants.Count; j++)
                 {
-                    continue;
+                    if (Abundants[i] + Abundants[j] <= 28123)
+                    {
+                        canBeWrittenasAbundent[Abundants[i] + Abundants[j]] = true;
+                    }
+                    else
+                    {
+                        break;
+                    }
                 }
             }
+
+            long sum = 0;
+
+            for (int i = 1; i <= 28123; i++)
+            {
+                if (!canBeWrittenasAbundent[i])
+                {
+                    sum += i;
+                }
+            }
+
 
             //Somehow take the list of Abundant sums and remove them from a list of integers.
 
 
-            
-
-            return 10;
+            return sum;
         }
     }
 }

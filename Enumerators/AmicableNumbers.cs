@@ -50,41 +50,7 @@ namespace ProjectEuler.Enumerators
 
             }
 
-           
-
-            //Amicable number
-            // x = y
-           
-
-
-
-            //foreach (var seedNumberA in seedSetA)
-            //{
-            //    foreach (var seedNumberB in seedSetB)
-            //    {
-            //        if (IsAmicable(seedNumberA, seedNumberB))
-            //        {
-            //            PairsOfAmicableNumbers.Add(new[] {seedNumberA, seedNumberB});
-            //        }
-
-            //    }
-
-            //}
-
-
-
-
-
             return AmicablePairs;
-
-
-            //Get a list of all natural numbers up to the input number
-
-
-
-
-
-
 
 
         }
