@@ -39,5 +39,18 @@ namespace Functions
 
             return everyDigit.Sum();
         }
+
+        public static long CountOfDigits(BigInteger inputNumber)
+        {
+            long numberDigits = 0;
+
+            while (!inputNumber.IsZero)
+            {
+                inputNumber /= 10;
+                numberDigits++;
+            }
+
+            return numberDigits;
+        }
     }
 }

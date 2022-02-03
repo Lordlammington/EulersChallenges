@@ -52,7 +52,6 @@ namespace ProjectEuler.Enumerators
 
             return AmicablePairs;
 
-
         }
 
         public static bool IsAmicable(long A, long B)

@@ -1,4 +1,5 @@
 ﻿using System;
+using Functions;
 using ProjectEuler;
 
 
@@ -8,7 +9,10 @@ namespace Challenges
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("You Fool, Go Run the Tests!");
+            string str = "012";
+
+            Permutations.Start(str);
+            var allcomb = Permutations._Combinations;
         }
     }
 }

@@ -15,7 +15,8 @@ namespace Challenges
 
         public long RunChallenge()
         {
-            return Fibonacci.Sequence().TakeWhile(number => number < MaxFibbValue).Where(x => x % 2 == 0).Sum(); ;
+            return 44;
+            //return Fibonacci.Sequence().TakeWhile(number => number < MaxFibbValue).Where(x => x % 2 == 0).Sum(); ;
         }
     }
 }

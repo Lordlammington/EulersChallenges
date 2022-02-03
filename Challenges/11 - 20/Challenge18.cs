@@ -1,18 +1,12 @@
 ﻿using ProjectEuler;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Enumerators;
 using Functions;
 
 namespace Challenges
 {
     public class Challenge18 : IRunChallenge
-    {
-
-            
+    {   
         public long RunChallenge()
         {
             List<long[]> triangle = new List<long[]>
@@ -35,18 +29,6 @@ namespace Challenges
                 
             };
 
-
-            //Select 2 numbers from an array, 2 at a time
-
-
-            //var foo = triangle[0].Skip(0).Take(2);
-            //triangle[1][0] += ReturnThe.BiggerNumber(foo.First(), foo.Last());
-
-            //Skip go up by 1
-            //var bing = triangle[0].Skip(1).Take(2);
-            //triangle[1][1] += ReturnThe.BiggerNumber(bing.First(), bing.Last());
-
-
             for (int x = 0; x < triangle.Count; x++)
             {
                 for (int i = 0; i <= triangle[x].Length - 2; i++)
@@ -54,21 +36,9 @@ namespace Challenges
                     var bds = triangle[x].Skip(i).Take(2);
                     triangle[x+1][i] += ReturnThe.BiggerNumber(bds.First(), bds.Last());
                 }
-
             }
-
-
-
-
-            //Select the first 2 
-
 
             return 10;
         }
-
-
-
-
-
     }
 }

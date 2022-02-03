@@ -10,7 +10,6 @@ namespace Enumerators
 
             do
             {
-
                 yield return current;
                 if (current == 1) break;
                 if (current % 2 == 0) current /= 2L;

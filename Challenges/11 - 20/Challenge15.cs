@@ -1,7 +1,5 @@
-﻿using Enumerators;
-using Functions;
+﻿using Functions;
 using ProjectEuler;
-using System.Linq;
 
 namespace Challenges
 {

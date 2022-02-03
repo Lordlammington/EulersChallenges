@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net.Sockets;
 using System.Numerics;
-using ProjectEuler;
-using Enumerators;
 
 namespace ProjectEuler.Challenges
 {
@@ -125,7 +121,6 @@ namespace ProjectEuler.Challenges
             }
 
             List<byte> EveryDigit = new List<byte>();
-
 
             while (!sumOfAllStrings.IsZero)
             {

@@ -1,5 +1,4 @@
 ﻿using Enumerators;
-using Functions;
 using ProjectEuler;
 using System.Linq;
 
@@ -8,7 +7,6 @@ namespace Challenges
     public class Challenge14 : IRunChallenge
     {
         public long _InputNumber;
-
         public long RunChallenge()
         {
             long LongestSeries = 0;
@@ -22,7 +20,6 @@ namespace Challenges
                     responsibleNumber = number;
                 }
             }
-
             return responsibleNumber;
         }
     }

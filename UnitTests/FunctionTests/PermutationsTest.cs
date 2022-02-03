@@ -10,7 +10,12 @@ namespace EnumeratorTests
         [Test]
         public void Test012()
         {
-            Permutations.SequenceOfAll("012");
+            string str = "012";
+
+            Permutations.Start(str);
+            var allcomb = Permutations._Combinations;
+
+            Assert.AreEqual(6, allcomb.Count);
         }
     }
 }

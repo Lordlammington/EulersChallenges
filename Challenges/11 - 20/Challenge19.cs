@@ -17,7 +17,7 @@ namespace Challenges
         {
 
             long sundayCounter = 0;
-            for (var dayCounter = _StartDate; dayCounter < _EndDate; dayCounter = dayCounter.AddDays(1))
+            for (var dayCounter = _StartDate; dayCounter < _EndDate; dayCounter = dayCounter.AddMonths(1))
             {
                 if (dayCounter.DayOfWeek == DayOfWeek.Sunday && dayCounter.Day == 1)
                 {
