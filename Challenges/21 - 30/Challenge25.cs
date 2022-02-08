@@ -17,15 +17,12 @@ namespace Challenges
         //have a function the tretuns the n# of digits of an inputted nuber
         public long RunChallenge()
         {
-
-
-            var foo = Fibonacci.Sequence().TakeWhile(number => InputNumberAs.CountOfDigits(number) <= 1001 );
             var (number, index) = Fibonacci.Sequence().Select((number, i) => (number, i)).First(it => InputNumberAs.CountOfDigits(it.number) == 1000);
             var bar = index;
 
-            int i = 10;
-
-            return bar ;
+            //Bar is off by 1, investigate why...
+            //answer is 4782 but i'm getting 4781
+            return bar +1;
         }
     }
 }

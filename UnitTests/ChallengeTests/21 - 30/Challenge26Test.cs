@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 namespace Challenges21To30
 {
     [TestFixture]
-    class Challenge25Test
+    class Challenge26Test
     {
         [Test]
-        public void Template()
+        public void ReciprocalCycles()
         {
-            Challenge25 challenge = new Challenge25();
-            Assert.AreEqual(4782, challenge.RunChallenge());
+            Challenge26 challenge = new Challenge26();
+            Assert.AreEqual(983, challenge.RunChallenge());
         }
     }
 }
