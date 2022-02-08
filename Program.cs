@@ -9,10 +9,10 @@ namespace Challenges
     {
         static void Main(string[] args)
         {
-            string str = "012";
-
-            Permutations.Start(str);
-            var allcomb = Permutations._Combinations;
+            do
+            {
+                Console.WriteLine("RUN THE TESTS, NOT ME!!!");
+            } while (true);
         }
     }
 }

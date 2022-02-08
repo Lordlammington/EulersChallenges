@@ -19,8 +19,9 @@ namespace Challenges
         {
 
 
-            var foo = Fibonacci.Sequence().TakeWhile(number => InputNumberAs.CountOfDigits(number) < 1001 );
-            var bar = foo.Count();// its +1 -1
+            var foo = Fibonacci.Sequence().TakeWhile(number => InputNumberAs.CountOfDigits(number) <= 1001 );
+            var (number, index) = Fibonacci.Sequence().Select((number, i) => (number, i)).First(it => InputNumberAs.CountOfDigits(it.number) == 1000);
+            var bar = index;
 
             int i = 10;
 

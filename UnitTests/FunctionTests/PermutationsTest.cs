@@ -2,7 +2,7 @@
 using ProjectEuler.Enumerators;
 using Functions;
 
-namespace EnumeratorTests
+namespace FunctionTests
 {
     [TestFixture]
     public class PermutationsTest

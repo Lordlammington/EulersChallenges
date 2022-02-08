@@ -18,9 +18,9 @@ namespace Enumerators
            
             do
             {
+                yield return secondaryTerm;
                 BigInteger oldNumber2 = secondaryTerm;
                 secondaryTerm = primaryTerm + secondaryTerm;
-                yield return secondaryTerm;
                 primaryTerm = oldNumber2;
 
             } while (true);
