@@ -1,4 +1,6 @@
-﻿using ProjectEuler;
+﻿using System.Linq;
+using ProjectEuler;
+using ProjectEuler.Enumerators;
 
 namespace Challenges
 {
@@ -7,21 +9,7 @@ namespace Challenges
         public long sizeofGrid;
         public long RunChallenge()
         {
-            var grid = new long[sizeofGrid, sizeofGrid];
-
-
-
-
-
-            //First make a 2d array
-            // the number of numbers in that x * x grid is the number squared.
-            // going anti clockwise
-
-
-
-
-
-            return 10;
+            return SpiralNumberCorners.Sequence().TakeWhile(x => x <= sizeofGrid * sizeofGrid).Sum();
         }
     }
 }
