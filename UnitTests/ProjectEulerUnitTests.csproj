@@ -16,14 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="ChallengeTests\Template.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="ChallengeTests\Template.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
     <PackageReference Include="NUnit" Version="3.13.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
@@ -32,6 +24,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProjectEuler.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="EnumeratorTests\" />
   </ItemGroup>
 
 </Project>
