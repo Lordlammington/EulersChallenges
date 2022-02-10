@@ -59,36 +59,36 @@ namespace EnumeratorTests
     [TestFixture]
     public class ThreeDigitProduct
     {
-            [Test]
-            public void TestFirstNumber()
-            {
-                //First Number should be 10000 ( 100 * 100 )
-                Assert.AreEqual(10000, ThreeDigitProducts.Sequence().Min());
-            }
+        [Test]
+        public void TestFirstNumber()
+        {
+            //First Number should be 10000 ( 100 * 100 )
+            Assert.AreEqual(10000, ThreeDigitProducts.Sequence().Min());
+        }
 
-            [Test]
-            public void TestLastNumber()
-            {
-                //First Number should be 99801 ( 999 * 999 )
-                Assert.AreEqual(998001, ThreeDigitProducts.Sequence().Max());
-            }
-        
+        [Test]
+        public void TestLastNumber()
+        {
+            //First Number should be 99801 ( 999 * 999 )
+            Assert.AreEqual(998001, ThreeDigitProducts.Sequence().Max());
+        }
+
     }
 
     [TestFixture]
-    public class Fibbonacci
+    public class Fibonacci
     {
         [Test]
         public void Test50thFibonacci()
         {
-            long result = (long)Fibonacci.Sequence().Take(50).Last();
+            long result = (long)Enumerators.Fibonacci.Sequence().Take(50).Last();
             Assert.AreEqual(12586269025, result);
         }
 
         [Test]
         public void Test20thFibonacci()
         {
-            long result = (long)Fibonacci.Sequence().Take(20).Last();
+            long result = (long)Enumerators.Fibonacci.Sequence().Take(20).Last();
             Assert.AreEqual(6765, result);
         }
 
@@ -96,12 +96,12 @@ namespace EnumeratorTests
         public void First12Fibonacci()
         {
             IEnumerable<BigInteger> expected = new BigInteger[] { 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144 };
-            IEnumerable<BigInteger> result = Fibonacci.Sequence().Take(12);
+            IEnumerable<BigInteger> result = Enumerators.Fibonacci.Sequence().Take(12);
 
             Assert.AreEqual(expected, result);
         }
     }
-    
+
     [TestFixture]
     public class NaturalNumber
     {
@@ -110,6 +110,8 @@ namespace EnumeratorTests
         {
             Assert.AreEqual(100, NaturalNumbers.Sequence().Skip(99).First());
         }
+
+        [Test]
         public void SixtyNinth()
         {
             Assert.AreEqual(100, NaturalNumbers.Sequence().Skip(68).First());
@@ -127,7 +129,7 @@ namespace EnumeratorTests
         }
 
         [Test]
-        public void Sixtyth()
+        public void Sixtieth()
         {
             Assert.AreEqual(281, PrimeNumbers.Sequence().Take(60).Last());
         }
@@ -148,7 +150,7 @@ namespace EnumeratorTests
     }
 
     [TestFixture]
-    public class Trianglenumber
+    public class TriangleNumber
     {
         [Test]
         public void Seventh()
