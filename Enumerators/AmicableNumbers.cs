@@ -1,23 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Enumerators;
 using Functions;
 
-namespace ProjectEuler.Enumerators
+namespace Enumerators
 {
     public static class AmicableNumbers
     {
+
+
+        //This probably could do with a re write to be honest...
+
+
         public static Dictionary<long, long> List(this long calculateUntil)
         {
-            //count up to Calculate until
-            //Get a list of all divisors, and sum them
-            //Check 
-
-            //Generate 2 lists of natural numbers up to the calculate until
-            //find some way to verify if numbers are Amicable
 
             Dictionary<long, long> DivisorPairs = new Dictionary<long, long>();
             Dictionary<long, long> AmicablePairs = new Dictionary<long, long>();
@@ -40,7 +36,6 @@ namespace ProjectEuler.Enumerators
 
                 if (x.Key == DivisorPairs[a] && x.Key != x.Value && foo != x.Key)
                 {
-                    //CHERCK FOR DUPLICATE
                     AmicablePairs.Add(x.Key, x.Value);
                     foo = x.Value;
                 }

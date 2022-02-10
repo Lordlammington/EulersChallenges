@@ -26,4 +26,8 @@
     <ProjectReference Include="..\ProjectEuler.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="EnumeratorTests\" />
+  </ItemGroup>
+
 </Project>

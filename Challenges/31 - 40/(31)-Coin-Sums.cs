@@ -1,6 +1,7 @@
-﻿using System.Linq;
-using ProjectEuler;
-using ProjectEuler.Enumerators;
+﻿using ProjectEuler;
+using Enumerators;
+using Functions;
+
 
 namespace Challenges
 {
@@ -10,6 +11,9 @@ namespace Challenges
         
         public long RunChallenge()
         {
+
+
+
             return 10;
         }
     }
