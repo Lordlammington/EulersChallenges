@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Functions;
-using Functions;
-using Functions;
 
 namespace Challenges
 {

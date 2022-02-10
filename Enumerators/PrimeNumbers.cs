@@ -7,11 +7,21 @@ using System.Threading.Tasks;
 
 namespace Enumerators
 {
-    public class PrimeNumbers : FilterEnum<long>
+    public class PrimeNumbers 
     {
-        public PrimeNumbers() : base(new NaturalNumbers(), CheckForPrime)
+        public static IEnumerable<long> Sequence()
         {
+            long number = 1;
+            do
+            {
+                if (CheckForPrime(number))
+                {
+                    yield return number;
+                }
 
+                number++;
+
+            } while (true);
         }
 
         public static bool CheckForPrime(long naturalNumber)
@@ -31,4 +41,7 @@ namespace Enumerators
         }
 
     }
+
+
+    
 }

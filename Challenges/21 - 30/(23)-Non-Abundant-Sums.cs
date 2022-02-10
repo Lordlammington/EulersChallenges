@@ -16,9 +16,9 @@ namespace Challenges
 
         public long RunChallenge()
         {
-            NaturalNumbers naturalNumbers = new NaturalNumbers();
+           
 
-            var integers = naturalNumbers.Take(28123);
+            var integers = NaturalNumbers.Sequence().Take(28123);
             
             List<long> Abundants = new List<long>();
 

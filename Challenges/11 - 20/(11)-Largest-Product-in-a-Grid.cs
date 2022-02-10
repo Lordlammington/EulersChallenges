@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Enumerators;
 using ProjectEuler;
 
 namespace Challenges
 {
     /// <summary>
-    /// By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
-    /// What is the 10001st prime number?
+    /// In the 20×20 grid below, four numbers along a diagonal line have been marked in red.
+    /// The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
+    /// What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
     /// </summary>
     public class Challenge11 : IRunChallenge
     {
@@ -39,7 +37,7 @@ namespace Challenges
             {20, 73, 35, 29, 78, 31, 90, 01, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 05, 54},
             {01, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 01, 89, 19, 67, 48}};
 
-            List<long> AllProducts = new List<long>();
+            List<long> AllProducts = new();
 
             //Find each horizontal sum  
             for (long i = 0; i < array.GetLength(1); i++)

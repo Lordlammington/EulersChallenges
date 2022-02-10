@@ -18,13 +18,12 @@ namespace ProjectEuler.Enumerators
 
             //Generate 2 lists of natural numbers up to the calculate until
             //find some way to verify if numbers are Amicable
-            NaturalNumbers natural = new NaturalNumbers();
 
             Dictionary<long, long> DivisorPairs = new Dictionary<long, long>();
             Dictionary<long, long> AmicablePairs = new Dictionary<long, long>();
             long foo = 0;
 
-            foreach (var natnumber in natural.Take((int)calculateUntil))
+            foreach (var natnumber in NaturalNumbers.Sequence().Take((int)calculateUntil))
             {
                 DivisorPairs.Add(natnumber, Divisors.List(natnumber).SkipLast(1).Sum());
             }
@@ -36,9 +35,7 @@ namespace ProjectEuler.Enumerators
                     continue;
                 }
 
-                long a = DivisorPairs[x.Key];
-                bool donotskip = true;
-                
+                long a = DivisorPairs[x.Key];                
 
 
                 if (x.Key == DivisorPairs[a] && x.Key != x.Value && foo != x.Key)

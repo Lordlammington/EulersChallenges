@@ -16,7 +16,6 @@ namespace Challenges
             // if n is even then even + odd = odd, so n in this example can be even or odd.
             // 
 
-            NaturalNumbers naturalNumbers = new NaturalNumbers();
 
             long aHigh = 0;
             long bHigh = 0;
@@ -28,7 +27,7 @@ namespace Challenges
                 {
 
 
-                    var nList = naturalNumbers.Take((a * -1 ) -1 );
+                    var nList = NaturalNumbers.Sequence().Take((a * -1 ) -1 );
 
                     bool isAllPrimes = true;
                     long numOfPrimes = 0;

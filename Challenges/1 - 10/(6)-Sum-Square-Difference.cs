@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Challenges
 {
-    class Challenge6 : IRunChallenge
+    public class Challenge6 : IRunChallenge
     {
         /// <summary>
         /// The sum of the squares of the first ten natural numbers is 385
@@ -19,7 +19,7 @@ namespace Challenges
         public int _SquareDifference;
         public long RunChallenge()
         {
-            List<int> squares = new List<int>();
+            List<int> squares = new();
             do
             {
                 squares.Add(_SquareDifference);

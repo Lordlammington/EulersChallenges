@@ -7,47 +7,18 @@ using ProjectEuler;
 
 namespace Enumerators
 {
-    public class NaturalNumbers : IEnumerable<long>
+    public static class NaturalNumbers
     {
-        private class NaturalNumbersEnumerator : IEnumerator<long>
+        public static IEnumerable<long> Sequence()
         {
-            public NaturalNumbersEnumerator()
+            long startingnum = 1;
+            do
             {
-                Current = 0;
-            }
+                yield return startingnum;
+                startingnum++;
 
-            public bool MoveNext()
-            {
-                Current++;
-
-                return true;
-            }
-
-            public void Reset()
-            {
-                Current = 1;
-            }
-
-            public long Current { get; private set; }
-
-            object IEnumerator.Current => Current;
-
-            public void Dispose()
-            {
-
-            }
-        }
-        public IEnumerator<long> GetEnumerator()
-        {
-            return new NaturalNumbersEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
+            } while (true);
         }
     }
-
-
-    
 }
+

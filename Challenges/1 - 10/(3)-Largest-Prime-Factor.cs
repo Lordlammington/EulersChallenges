@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Linq;
 using Enumerators;
+using ProjectEuler;
 
-namespace ProjectEuler.Challenges
+namespace Challenges
 {
     public class Challenge3 : IRunChallenge
     {

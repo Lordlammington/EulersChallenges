@@ -7,7 +7,7 @@ using ProjectEuler;
 using Enumerators;
 using Functions;
 
-namespace ProjectEuler.Challenges
+namespace Challenges
 {
     public class Challenge12 : IRunChallenge
     {
@@ -29,7 +29,7 @@ namespace ProjectEuler.Challenges
             //triangleNumbers.TakeWhile(x => x * x <= _UpToDivisors).Where(y => DivisibleBy(number, y)).GetNaturalNumbersRay().TakeWhile(x => x * x <= number).Where(y => DivisibleBy(number, y))
 
 
-            return 10;
+            return 0;
 
 
                 //while (NumberOfDivisors(foo) < _UpToDivisors)

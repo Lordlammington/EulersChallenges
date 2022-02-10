@@ -63,8 +63,4 @@ namespace Challenges
             }
         }
     }
- 
-
-
-
 }

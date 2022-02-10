@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using ProjectEuler;
+using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 
-namespace ProjectEuler.Challenges
+namespace Challenges
 {
     public class Challenge13 : IRunChallenge
     {

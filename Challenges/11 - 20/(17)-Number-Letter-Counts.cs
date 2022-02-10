@@ -11,9 +11,9 @@ namespace Challenges
 
         public long RunChallenge()
         {
-            NaturalNumbers naturalNumbers = new NaturalNumbers();
+            
             long CharLengthOfAllNumbers = 0;
-            foreach (long number in naturalNumbers.Take((int)_CalculateInclusive))
+            foreach (long number in NaturalNumbers.Sequence().Take((int)_CalculateInclusive))
             {
                 CharLengthOfAllNumbers = CharLengthOfAllNumbers + NumberToWord.NumberOfCharacters(number);
             }

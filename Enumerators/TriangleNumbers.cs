@@ -7,12 +7,11 @@ namespace Enumerators
     {
         public static IEnumerable<long> Sequence()
         {
-            NaturalNumbers naturalNumbers = new NaturalNumbers();
             long rowAddend = default;
 
             do
             {
-                long triangleNumber = naturalNumbers.Take((int) rowAddend + 1).Sum();
+                long triangleNumber = NaturalNumbers.Sequence().Take((int) rowAddend + 1).Sum();
                 rowAddend++;
                 yield return triangleNumber;
 

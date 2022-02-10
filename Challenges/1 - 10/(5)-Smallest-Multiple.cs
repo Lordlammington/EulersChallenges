@@ -17,11 +17,8 @@ namespace Challenges
         public int[] _Divisors; 
         public long RunChallenge()
         {
-            //call naturalnumber enum
-            NaturalNumbers natnum = new NaturalNumbers();
 
-
-            return natnum.Where(x => DivIntoArrayRemainderCheck(x)).First();
+            return NaturalNumbers.Sequence().Where(x => DivIntoArrayRemainderCheck(x)).First();
 
 
             bool DivIntoArrayRemainderCheck(long input)
