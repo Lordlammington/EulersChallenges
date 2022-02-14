@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.Numerics;
 
 namespace Enumerators
 {
     public static class CollatzSeries
     {
-        public static IEnumerable<long> Sequence(this long source)
+        public static IEnumerable<BigInteger> Sequence(BigInteger source)
         {
-            long current = source;
+            var current = source;
 
             do
             {

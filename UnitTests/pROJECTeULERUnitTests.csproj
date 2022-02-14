@@ -9,10 +9,13 @@
   <ItemGroup>
     <Compile Remove="ChallengeTests\bin\**" />
     <Compile Remove="ChallengeTests\obj\**" />
+    <Compile Remove="EnumeratorTests\**" />
     <EmbeddedResource Remove="ChallengeTests\bin\**" />
     <EmbeddedResource Remove="ChallengeTests\obj\**" />
+    <EmbeddedResource Remove="EnumeratorTests\**" />
     <None Remove="ChallengeTests\bin\**" />
     <None Remove="ChallengeTests\obj\**" />
+    <None Remove="EnumeratorTests\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,10 +27,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProjectEuler.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="EnumeratorTests\" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
+using Xunit.Abstractions;
 
 namespace Enumerators
 {
@@ -11,9 +13,9 @@ namespace Enumerators
 
             do
             {
-                long triangleNumber = NaturalNumbers.Sequence().Take((int) rowAddend + 1).Sum();
+                var triangleNumber = NaturalNumbers.Sequence().Take((int) rowAddend + 1).Aggregate(BigInteger.Add);
                 rowAddend++;
-                yield return triangleNumber;
+                yield return (long)triangleNumber;
 
             } while (true);
         }

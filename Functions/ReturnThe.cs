@@ -6,26 +6,12 @@ namespace Functions
     {
         public static long BiggerNumber(long a, long b)
         {
-            if (a > b)
-            {
-                return a;
-            }
-            else
-            {
-                return b;
-            }
+            return a > b ? a : b;
         }
 
         public static long SmallerNumber(long a, long b)
         {
-            if (a > b)
-            {
-                return b;
-            }
-            else
-            {
-                return a;
-            }
+            return a > b ? b : a;
         }
     }
 }

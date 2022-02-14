@@ -1,15 +1,16 @@
 ﻿using ProjectEuler;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using Functions;
 
 namespace Challenges
 {
     public class Challenge18 : IRunChallenge
     {   
-        public long RunChallenge()
+        public BigInteger RunChallenge()
         {
-            List<long[]> triangle = new List<long[]>
+            var triangle = new List<long[]>
             {
                 new long[] {04, 62, 98, 27, 23, 09, 70, 98, 73, 93, 38, 53, 60, 04, 23},
                 new long[] {63, 66, 04, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31},
@@ -29,12 +30,12 @@ namespace Challenges
                 
             };
 
-            for (int x = 0; x < triangle.Count; x++)
+            for(var x = 0; x < triangle.Count; x++)
             {
-                for (int i = 0; i <= triangle[x].Length - 2; i++)
+                for (var i = 0; i <= triangle[x].Length - 2; i++)
                 {
-                    var bds = triangle[x].Skip(i).Take(2);
-                    triangle[x+1][i] += ReturnThe.BiggerNumber(bds.First(), bds.Last());
+                    var enumerable = triangle[x].Skip(i).Take(2);
+                    triangle[x+1][i] += ReturnThe.BiggerNumber(enumerable.First(), enumerable.Last());
                 }
             }
 

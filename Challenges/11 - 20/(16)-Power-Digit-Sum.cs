@@ -7,10 +7,10 @@ namespace Challenges
 {
     public class Challenge16 : IRunChallenge
     {
-        public long _ToThePowerOf;
-        public long RunChallenge()
+        public BigInteger ToThePowerOf;
+        public BigInteger RunChallenge()
         {
-            return InputNumberAs.ListOfDigitsSummed((BigInteger)Math.Pow(2, _ToThePowerOf));
+            return InputNumberAs.ListOfDigitsSummed(Exponents.Solve(2, ToThePowerOf));
         }
     }
 }

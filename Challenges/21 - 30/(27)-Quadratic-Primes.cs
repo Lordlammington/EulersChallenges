@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using Enumerators;
 using ProjectEuler;
 
@@ -8,7 +9,7 @@ namespace Challenges
 {
     public class Challenge27 : IRunChallenge
     {
-        public long RunChallenge()
+        public BigInteger RunChallenge()
         {
             //
             // n * n + n + 41;
@@ -25,9 +26,7 @@ namespace Challenges
             {
                 for (int b = -999; b <= 1000; b++)
                 {
-
-
-                    var nList = NaturalNumbers.Sequence().Take((a * -1 ) -1 );
+                    var nList = NaturalNumbers.Sequence().Take((a * -1) -1 );
 
                     bool isAllPrimes = true;
                     long numOfPrimes = 0;

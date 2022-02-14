@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using Enumerators;
@@ -13,7 +14,7 @@ namespace Challenges
     {
         public DateTime _StartDate;
         public DateTime _EndDate;
-        public long RunChallenge()
+        public BigInteger RunChallenge()
         {
 
             long sundayCounter = 0;

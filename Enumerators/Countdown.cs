@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace Enumerators
 {
     public static class NaturalNumberCountdown 
     {
-        public static IEnumerable<long> Sequence(long startingNum)
+        public static IEnumerable<BigInteger> Sequence(BigInteger startingNum)
         {
             do
             {

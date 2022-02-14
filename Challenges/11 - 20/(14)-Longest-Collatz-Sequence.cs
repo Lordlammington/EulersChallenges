@@ -1,24 +1,25 @@
 ﻿using Enumerators;
 using ProjectEuler;
 using System.Linq;
+using System.Numerics;
 
 namespace Challenges
 {
     public class Challenge14 : IRunChallenge
     {
-        public long _InputNumber;
-        public long RunChallenge()
+        public BigInteger InputNumber;
+        public BigInteger RunChallenge()
         {
-            long LongestSeries = 0;
-            long responsibleNumber = 0;
-            foreach (var number in NaturalNumberCountdown.Sequence(_InputNumber))
+            var longestSeries = new BigInteger();
+            var responsibleNumber = new BigInteger();
+
+            foreach (var number in NaturalNumberCountdown.Sequence(InputNumber))
             {
-                long CurrentSeries = CollatzSeries.Sequence(number).Count();
-                if (LongestSeries < CurrentSeries)
-                {
-                    LongestSeries = CurrentSeries;
-                    responsibleNumber = number;
-                }
+                var currentSeries = CollatzSeries.Sequence(number).Count();
+                if (longestSeries >= currentSeries) continue;
+
+                longestSeries = currentSeries;
+                responsibleNumber = number;
             }
             return responsibleNumber;
         }

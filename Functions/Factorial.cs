@@ -26,7 +26,11 @@ namespace Functions
 
             for (int i = 1; i < input; i++)
             {
-                result = result * i;
+                result *= i;
+
+                // =+ +=
+
+                long foo;
             }
 
             return result;

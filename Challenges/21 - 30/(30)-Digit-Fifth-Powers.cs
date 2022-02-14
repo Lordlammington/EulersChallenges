@@ -4,6 +4,7 @@ using Functions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,7 +13,7 @@ namespace Challenges
     public class Challenge30 : IRunChallenge
     {
         public long _exponent;
-        public long RunChallenge()
+        public BigInteger RunChallenge()
         {
             //upper bound 354294
             List<long> DigitSums = new List<long>();

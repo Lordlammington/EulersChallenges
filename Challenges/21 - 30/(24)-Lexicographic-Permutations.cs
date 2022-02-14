@@ -3,13 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using Functions;
 
 namespace Challenges
 {
     public class Challenge24 : IRunChallenge
     {
-        public long RunChallenge()
+        public BigInteger RunChallenge()
         {
             string str = "0123456789";
             Permutations.Start(str);

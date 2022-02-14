@@ -1,14 +1,15 @@
-﻿using Functions;
+﻿using System.Numerics;
+using Functions;
 using ProjectEuler;
 
 namespace Challenges
 {
     public class Challenge15 : IRunChallenge
     {
-        public long _SizeOfSquare;
-        public long RunChallenge()
+        public long SizeOfSquare;
+        public BigInteger RunChallenge()
         {
-            return Binomial.Solve(_SizeOfSquare, _SizeOfSquare); ;
+            return Binomial.Solve(SizeOfSquare, SizeOfSquare);
         }
     }
 }

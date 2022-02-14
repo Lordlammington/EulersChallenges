@@ -7,7 +7,7 @@ namespace Challenges
 {
     public class Challenge13 : IRunChallenge
     {
-        List<string> BigListOfIntegerStrings = new List<string>()
+        private readonly List<string> _bigListOfIntegerStrings = new()
         {
             "37107287533902102798797998220837590246510135740250",
             "46376937677490009712648124896970078050417018260538",
@@ -111,36 +111,23 @@ namespace Challenges
             "53503534226472524250874054075591789781264330331690"
         };
 
-        public int _howManyFirstDigits;
-        public long RunChallenge()
+        public int HowManyFirstDigits;
+        public BigInteger RunChallenge()
         {
-            BigInteger sumOfAllStrings = default;
+            var sumOfAllStrings = _bigListOfIntegerStrings.Aggregate<string, BigInteger>(default, (current, integerString) => BigInteger.Parse(integerString) + current);
 
-            foreach (var IntegerString in BigListOfIntegerStrings)
-            {
-                sumOfAllStrings = BigInteger.Parse(IntegerString) + sumOfAllStrings;
-            }
-
-            List<byte> EveryDigit = new List<byte>();
+            var everyDigit = new List<byte>();
 
             while (!sumOfAllStrings.IsZero)
             {
-
-                BigInteger digit = sumOfAllStrings % 10;
-                EveryDigit.Add((byte)digit);
+                var digit = sumOfAllStrings % 10;
+                everyDigit.Add((byte)digit);
                 sumOfAllStrings /= 10;
             }
 
-            EveryDigit.Reverse();
+            everyDigit.Reverse();
 
-            long num = 0;
-
-            foreach (var digit in EveryDigit.Take(_howManyFirstDigits))
-            {
-                num = (num * 10) + digit;
-            }
-
-            return num;
+            return everyDigit.Take(HowManyFirstDigits).Aggregate<byte, long>(0, (current, digit) => (current * 10) + digit);
         }
     }
 }

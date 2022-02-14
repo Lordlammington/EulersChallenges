@@ -1,21 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using ProjectEuler;
 
 namespace Challenges
 {
-    /// <summary>
-    /// In the 20×20 grid below, four numbers along a diagonal line have been marked in red.
-    /// The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
-    /// What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
-    /// </summary>
     public class Challenge11 : IRunChallenge
     {
-        public int _AdjacentsToFind;
-        public long RunChallenge()
-        {
-            long[,] array = {
+        public int AdjacentToFind;
+
+        private readonly long[,] _array = {
             { 8,  2, 22, 97, 38, 15,  0, 40, 00, 75, 04, 05, 07, 78, 52, 12, 50, 77, 91, 8 },
             {49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 04, 56, 62, 00},
             {81, 49, 31, 73, 55, 79, 14, 29, 93, 71, 40, 67, 53, 88, 30, 03, 49, 13, 36, 65},
@@ -36,73 +31,71 @@ namespace Challenges
             {20, 69, 36, 41, 72, 30, 23, 88, 34, 62, 99, 69, 82, 67, 59, 85, 74, 04, 36, 16},
             {20, 73, 35, 29, 78, 31, 90, 01, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 05, 54},
             {01, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 01, 89, 19, 67, 48}};
-
-            List<long> AllProducts = new();
+        public BigInteger RunChallenge()
+        {
+            List<long> allProducts = new();
 
             //Find each horizontal sum  
-            for (long i = 0; i < array.GetLength(1); i++)
+            for (long i = 0; i < _array.GetLength(1); i++)
             {
-                var row = Enumerable.Range(0, array.GetLength(1))
-                .Select(x => array[i, x])
-                .ToArray();
-                int toSkipInRow = 0;
-                while (row.Count() - _AdjacentsToFind >= toSkipInRow )
+                var row = Enumerable.Range(0, _array.GetLength(1)).Select(x => _array[i, x]).ToArray();
+                var toSkipInRow = 0;
+                while (row.Length - AdjacentToFind >= toSkipInRow )
                 {
-                    AllProducts.Add(row.Skip(toSkipInRow).Take(_AdjacentsToFind).Aggregate((number1, number2) => number1 * number2));
+                    allProducts.Add(row.Skip(toSkipInRow).Take(AdjacentToFind).Aggregate((number1, number2) => number1 * number2));
                     toSkipInRow++;
                 }
             }
 
             //Find each vertical sum
-            for (long i = 0; i < array.GetLength(1); i++)
+            for (long i = 0; i < _array.GetLength(1); i++)
             {
-                var col = Enumerable.Range(0, array.GetLength(0))
-                    .Select(x => array[x, i])
-                    .ToArray();
-                int toSkipInRow = 0;
+                var col = Enumerable.Range(0, _array.GetLength(0)).Select(x => _array[x, i]).ToArray();
+                var toSkipInRow = 0;
 
-                while (col.Count() - _AdjacentsToFind >= toSkipInRow)
+                while (col.Length - AdjacentToFind >= toSkipInRow)
                 {
-                    AllProducts.Add(col.Skip(toSkipInRow).Take(_AdjacentsToFind).Aggregate((number1, number2) => number1 * number2));
+                    allProducts.Add(col.Skip(toSkipInRow).Take(AdjacentToFind).Aggregate((number1, number2) => number1 * number2));
                     toSkipInRow++;
                 }
             }
 
             //Find each diagonal sum
-            int diagonalOffset = 0;
+            var diagonalOffset = 0;
             do
             {
-                for (long i = 0; i <= array.GetLength(1) - _AdjacentsToFind; i++)
+                for (long i = 0; i <= _array.GetLength(1) - AdjacentToFind; i++)
                 {
-                    var diag = Enumerable.Range(0, _AdjacentsToFind)
-                    .Select(x => array[x + diagonalOffset, x + i])
+                    var diagonal = Enumerable.Range(0, AdjacentToFind)
+                    .Select(x => _array[x + diagonalOffset, x + i])
                     .ToArray();
 
-                    AllProducts.Add(diag.Take(_AdjacentsToFind).Aggregate((number1, number2) => number1 * number2));
+                    allProducts.Add(diagonal.Take(AdjacentToFind).Aggregate((number1, number2) => number1 * number2));
                 }
                 diagonalOffset++;
 
-            } while (diagonalOffset <= array.GetLength(0) - _AdjacentsToFind);
+            } while (diagonalOffset <= _array.GetLength(0) - AdjacentToFind);
+
 
             //Find each reverse  diagonal sum
-            int reverseDiagonalOffset = 0;
+            var reverseDiagonalOffset = 0;
             do
             {
-                for (long i = _AdjacentsToFind; i <= array.GetLength(1); i++)
+                for (long i = AdjacentToFind; i <= _array.GetLength(1); i++)
                 {
-                    var revdiag = Enumerable.Range(0, _AdjacentsToFind)
-                    .Select(x => array[i - x - 1, x + reverseDiagonalOffset ])
+                    var reverseDiagonal = Enumerable.Range(0, AdjacentToFind)
+                    .Select(x => _array[i - x - 1, x + reverseDiagonalOffset ])
                     .ToArray();
 
-                    AllProducts.Add(revdiag.Take(_AdjacentsToFind).Aggregate((number1, number2) => number1 * number2));
+                    allProducts.Add(reverseDiagonal.Take(AdjacentToFind).Aggregate((number1, number2) => number1 * number2));
                 }
                 reverseDiagonalOffset++;
 
-            } while (reverseDiagonalOffset <= array.GetLength(0) - _AdjacentsToFind);
+            } while (reverseDiagonalOffset <= _array.GetLength(0) - AdjacentToFind);
 
 
 
-            return AllProducts.Max();
+            return allProducts.Max();
         }
     }
 }

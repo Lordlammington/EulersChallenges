@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Net.Sockets;
+using System.Numerics;
 using ProjectEuler;
 using Enumerators;
 using Functions;
@@ -13,7 +14,7 @@ namespace Challenges
     {
         public long _UpToDivisors;
 
-        public long RunChallenge()
+        public BigInteger RunChallenge()
         {
             //TriangleNumbers.Sequence()
             

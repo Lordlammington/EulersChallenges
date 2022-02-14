@@ -1,4 +1,5 @@
-﻿using ProjectEuler;
+﻿using System.Numerics;
+using ProjectEuler;
 using Enumerators;
 using Functions;
 
@@ -9,11 +10,11 @@ namespace Challenges
     {
         //$2 = 2 x 1$ = 4 x 0.50 = 
         
-        public long RunChallenge()
+        public BigInteger RunChallenge()
         {
 
 
-
+            //what about reverse going up? 
             return 10;
         }
     }

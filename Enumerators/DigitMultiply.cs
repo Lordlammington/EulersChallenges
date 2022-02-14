@@ -2,90 +2,123 @@
 using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Enumerators
 {
-    public class ThreeDigitProducts
+
+    public class AllProducts
     {
-        public static IEnumerable<long> Sequence()
+        public static IEnumerable<BigInteger> Sequence(BigInteger primaryBigInteger, BigInteger secondaryBigInteger)
         {
-            long number1 = 100;
-            long number2 = 100;
-            bool hasReachedLimit = false;
+            BigInteger number1 = primaryBigInteger;
+            BigInteger number2 = secondaryBigInteger;
+
+            var hasReachedLimit = false;
             do
             {
                 yield return number1 * number2;
 
                 number1++;
 
-                if (number1 == 1000)
+                if (number1 == primaryBigInteger * 10)
                 {
                     number2++;
-                    number1 = 100;
+                    number1 = primaryBigInteger;
                 }
 
-                if (number2 == 1000 )
+                if (number2 == secondaryBigInteger * 10)
                 {
                     hasReachedLimit = true;
                 }
 
             } while (!hasReachedLimit);
         }
-    }
-    public class TwoDigitProducts
-    {
-        public static IEnumerable<long> Sequence()
+
+        public class ThreeDigitProducts
         {
-            long number1 = 10;
-            long number2 = 10;
-            bool hasReachedLimit = false;
-            do
+            public static IEnumerable<long> Sequence()
             {
-                yield return number1 * number2;
-
-                number1++;
-
-                if (number1 == 100)
+                long number1 = 100;
+                long number2 = 100;
+                var hasReachedLimit = false;
+                do
                 {
-                    number2++;
-                    number1 = 10;
-                }
+                    yield return number1 * number2;
 
-                if (number2 == 100)
-                {
-                    hasReachedLimit = true;
-                }
+                    number1++;
 
-            } while (!hasReachedLimit);
+                    if (number1 == 1000)
+                    {
+                        number2++;
+                        number1 = 100;
+                    }
+
+                    if (number2 == 1000)
+                    {
+                        hasReachedLimit = true;
+                    }
+
+                } while (!hasReachedLimit);
+            }
         }
-    }
-    public class OneDigitProducts
-    {
-        public static IEnumerable<long> Sequence()
+
+        public class TwoDigitProducts
         {
-            long number1 = 1;
-            long number2 = 1;
-            bool hasReachedLimit = false;
-            do
+            public static IEnumerable<long> Sequence()
             {
-                yield return number1 * number2;
-
-                number1++;
-
-                if (number1 == 10)
+                long number1 = 10;
+                long number2 = 10;
+                bool hasReachedLimit = false;
+                do
                 {
-                    number2++;
-                    number1 = 1;
-                }
+                    yield return number1 * number2;
 
-                if (number2 == 10)
+                    number1++;
+
+                    if (number1 == 100)
+                    {
+                        number2++;
+                        number1 = 10;
+                    }
+
+                    if (number2 == 100)
+                    {
+                        hasReachedLimit = true;
+                    }
+
+                } while (!hasReachedLimit);
+            }
+        }
+
+        public class OneDigitProducts
+        {
+            public static IEnumerable<long> Sequence()
+            {
+                long number1 = 1;
+                long number2 = 1;
+                bool hasReachedLimit = false;
+                do
                 {
-                    hasReachedLimit = true;
-                }
+                    yield return number1 * number2;
 
-            } while (!hasReachedLimit);
+                    number1++;
+
+                    if (number1 == 10)
+                    {
+                        number2++;
+                        number1 = 1;
+                    }
+
+                    if (number2 == 10)
+                    {
+                        hasReachedLimit = true;
+                    }
+
+                } while (!hasReachedLimit);
+            }
         }
     }
 }

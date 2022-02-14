@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Numerics;
 using Enumerators;
 using ProjectEuler;
 
@@ -12,7 +13,7 @@ namespace Challenges
         /// What is the largest prime factor of the number 600851475143 ?
         /// </summary>
         public long InputNumber { get; set; }
-        public long RunChallenge()
+        public BigInteger RunChallenge()
         {
             return NaturalNumberCountdown
                 .Sequence((long)Math.Ceiling(Math.Sqrt(InputNumber)))

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,8 +12,8 @@ namespace ProjectEuler
     /// Many Reference
     /// Wow
     /// </summary>
-    interface IRunChallenge
+    internal interface IRunChallenge
     {
-        public long RunChallenge();
+        public BigInteger RunChallenge();
     }
 }

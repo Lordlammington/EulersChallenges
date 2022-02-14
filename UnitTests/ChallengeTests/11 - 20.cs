@@ -11,7 +11,7 @@ namespace Challenges11To20
         public void Test4Adjacent()
         {
             Challenge11 challenge11 = new Challenge11();
-            challenge11._AdjacentsToFind = 4;
+            challenge11.AdjacentToFind = 4;
             Assert.AreEqual(70600674, challenge11.RunChallenge());
         }
     }
@@ -51,7 +51,7 @@ namespace Challenges11To20
         public void First10DigitsOfNumber()
         {
             Challenge13 challenge13 = new Challenge13();
-            challenge13._howManyFirstDigits = 10;
+            challenge13.HowManyFirstDigits = 10;
             Assert.AreEqual(5537376230, challenge13.RunChallenge());
         }
     }
@@ -63,7 +63,7 @@ namespace Challenges11To20
         public void LongestSequenceBelow10()
         {
             Challenge14 challenge14 = new Challenge14();
-            challenge14._InputNumber = 10;
+            challenge14.InputNumber = 10;
             //The longest collatz conjecture below 10 is 9, with 19 steps - Wikipedia.
             Assert.AreEqual(9, challenge14.RunChallenge());
         }
@@ -72,7 +72,7 @@ namespace Challenges11To20
         public void LongestSequenceBelow1000000()
         {
             Challenge14 challenge14 = new Challenge14();
-            challenge14._InputNumber = 1000000;
+            challenge14.InputNumber = 1000000;
             //The longest collatz conjecture below 1000000 is ...
             Assert.AreEqual(837799, challenge14.RunChallenge());
         }
@@ -86,7 +86,7 @@ namespace Challenges11To20
         public void SizeTwoSquareNavigation()
         {
             Challenge15 challenge = new Challenge15();
-            challenge._SizeOfSquare = 2;
+            challenge.SizeOfSquare = 2;
             Assert.AreEqual(6, challenge.RunChallenge());
         }
 
@@ -95,7 +95,7 @@ namespace Challenges11To20
         public void SizeTwentySquareNavigation()
         {
             Challenge15 challenge = new Challenge15();
-            challenge._SizeOfSquare = 20;
+            challenge.SizeOfSquare = 20;
             Assert.AreEqual(137846528820, challenge.RunChallenge());
         }
     }
@@ -107,14 +107,14 @@ namespace Challenges11To20
         public void TwoToThePowerOf15()
         {
             Challenge16 challenge = new Challenge16();
-            challenge._ToThePowerOf = 15;
+            challenge.ToThePowerOf = 15;
             Assert.AreEqual(26, challenge.RunChallenge());
         }
         [Test]
         public void TwoToThePowerOf1000()
         {
             Challenge16 challenge = new Challenge16();
-            challenge._ToThePowerOf = 1000;
+            challenge.ToThePowerOf = 1000;
             Assert.AreEqual(1366, challenge.RunChallenge());
         }
     }
@@ -126,14 +126,14 @@ namespace Challenges11To20
         public void NumberLetterCountsTo5()
         {
             Challenge17 challenge = new Challenge17();
-            challenge._CalculateInclusive = 5;
+            challenge.CalculateInclusive = 5;
             Assert.AreEqual(19, challenge.RunChallenge());
         }
         [Test]
         public void NumberLetterCountsTo1000()
         {
             Challenge17 challenge = new Challenge17();
-            challenge._CalculateInclusive = 1000;
+            challenge.CalculateInclusive = 1000;
             Assert.AreEqual(21124, challenge.RunChallenge());
         }
     }

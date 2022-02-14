@@ -3,45 +3,31 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using Enumerators;
 using Functions;
-using ProjectEuler.Enumerators;
 
 namespace Challenges
 {
     public class Challenge23 : IRunChallenge
     {
 
-        public long RunChallenge()
+        public BigInteger RunChallenge()
         {
-           
-
-            var integers = NaturalNumbers.Sequence().Take(28123);
             
-            List<long> Abundants = new List<long>();
+            var abundantNumbers = NaturalNumbers.Sequence().Take(28123).Where(number => Divisors.IsAbundantNumber(number)).ToList();
 
-            foreach (var integer in integers)
+            var canBeWrittenAsAbundant = new bool[28123 + 1];
+
+            for (var i = 0; i < abundantNumbers.Count; i++)
             {
-
-                //Get number
-                if (Divisors.IsAbundantNumber(integer))
+                for (var j = i; j < abundantNumbers.Count; j++)
                 {
-                    Abundants.Add(integer);
-                }
-
-            }
-
-            bool[] canBeWrittenasAbundent = new bool[28123 + 1];
-
-            for (int i = 0; i < Abundants.Count; i++)
-            {
-                for (int j = i; j < Abundants.Count; j++)
-                {
-                    if (Abundants[i] + Abundants[j] <= 28123)
+                    if (abundantNumbers[i] + abundantNumbers[j] <= 28123)
                     {
-                        canBeWrittenasAbundent[Abundants[i] + Abundants[j]] = true;
+                        canBeWrittenAsAbundant[abundantNumbers[i] + abundantNumbers[j]] = true;
                     }
                     else
                     {
@@ -54,7 +40,7 @@ namespace Challenges
 
             for (int i = 1; i <= 28123; i++)
             {
-                if (!canBeWrittenasAbundent[i])
+                if (!canBeWrittenAsAbundant[i])
                 {
                     sum += i;
                 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using ProjectEuler;
@@ -66,7 +67,7 @@ namespace Functions
                 return false;
             }
         }
-        public static bool IsAbundantNumber(long input)
+        public static bool IsAbundantNumber(BigInteger input)
         {
             List<long> listOfOfDivisors = new List<long>();
 

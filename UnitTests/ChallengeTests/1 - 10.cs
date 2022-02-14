@@ -1,4 +1,5 @@
-﻿using Challenges;
+﻿using System.Numerics;
+using Challenges;
 using NUnit.Framework;
 
 namespace Challenges1To10
@@ -22,11 +23,12 @@ namespace Challenges1To10
         public void TestResult()
         {
 
-            Challenge1 challenge1 = new Challenge1();
-            challenge1.CalculateUntilNotIncluding = 1000;
+            var challenge1 = new Challenge1
+            {
+                CalculateUntilNotIncluding = 1000
+            };
 
-            long result = challenge1.RunChallenge();
-
+            var result = challenge1.RunChallenge();
             Assert.AreEqual(233168, result);
         }
 
@@ -88,7 +90,7 @@ namespace Challenges1To10
         {
 
             Challenge5 challenge = new Challenge5();
-            challenge._Divisors = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            challenge.Divisors = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
             Assert.AreEqual(2520, challenge.RunChallenge());
         }
@@ -164,16 +166,16 @@ namespace Challenges1To10
         [Test]
         public void SumOfPrimesBelow10()
         {
-            Challengex10 challenge10 = new Challengex10();
-            challenge10._CountUpTo = 10;
+            Challenge10 challenge10 = new Challenge10();
+            challenge10.CountUpTo = 10;
             Assert.AreEqual(17, challenge10.RunChallenge());
         }
 
         [Test]
         public void SumOfPrimesBelow2Million()
         {
-            Challengex10 challenge10 = new Challengex10();
-            challenge10._CountUpTo = 2000000;
+            Challenge10 challenge10 = new Challenge10();
+            challenge10.CountUpTo = 2000000;
             Assert.AreEqual(142913828922, challenge10.RunChallenge());
         }
 

@@ -2,18 +2,18 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using Enumerators;
 using Functions;
-using ProjectEuler.Enumerators;
 
 namespace Challenges
 {
     public class Challenge21 : IRunChallenge
     {
 
-        public long RunChallenge()
+        public BigInteger RunChallenge()
         {
             var list = AmicableNumbers.List(10000);
 
