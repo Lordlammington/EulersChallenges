@@ -31,7 +31,7 @@ namespace Enumerators
 
                 if (x.Key == divisorPairs[a] && x.Key != x.Value && foo != x.Key)
                 {
-                    amicablePairs.Add(x.Key, x.Value);
+                    amicablePairs.Add((long)x.Key, x.Value);
                     foo = x.Value;
                 }
 

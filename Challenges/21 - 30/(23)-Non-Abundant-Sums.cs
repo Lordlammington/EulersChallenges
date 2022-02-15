@@ -27,7 +27,7 @@ namespace Challenges
                 {
                     if (abundantNumbers[i] + abundantNumbers[j] <= 28123)
                     {
-                        canBeWrittenAsAbundant[abundantNumbers[i] + abundantNumbers[j]] = true;
+                        canBeWrittenAsAbundant[(int)(abundantNumbers[i] + abundantNumbers[j])] = true;
                     }
                     else
                     {

@@ -8,28 +8,17 @@ namespace Challenges1To10
     class Challenge1Tests
     {
         [Test]
-        public void TestMultiples()
+        public void Til10()
         {
-
-            Challenge1 challenge1 = new Challenge1();
-            challenge1.CalculateUntilNotIncluding = 10;
-
-            long result = challenge1.RunChallenge();
-
-            Assert.AreEqual(23, result);
+            var challenge = new Challenge1 { CalculateUntilNotIncluding = 10 };
+            Assert.AreEqual(23, challenge.RunChallenge());
         }
 
         [Test]
-        public void TestResult()
+        public void Til1000()
         {
-
-            var challenge1 = new Challenge1
-            {
-                CalculateUntilNotIncluding = 1000
-            };
-
-            var result = challenge1.RunChallenge();
-            Assert.AreEqual(233168, result);
+            var challenge = new Challenge1 { CalculateUntilNotIncluding = 1000 };
+            Assert.AreEqual(233168, challenge.RunChallenge());
         }
 
     }
@@ -38,13 +27,18 @@ namespace Challenges1To10
     class Challenge2Tests
     {
         [Test]
-        public void SumOfFirst10FibbOnlyEven()
+        public void SumOfFirst10TermsEven()
         {
-            Challenge2 challenge2 = new Challenge2();
-            //does not Exceed
-            challenge2.MaxFibbValue = 90;
+            var challenge = new Challenge2() { MaxFibValue = 90};
+            Assert.AreEqual(44, challenge.RunChallenge());
 
-            Assert.AreEqual(44, challenge2.RunChallenge());
+        }
+
+        [Test]
+        public void SumOfevenbelow4000000()
+        {
+            var challenge = new Challenge2() { MaxFibValue = 4000000 };
+            Assert.AreEqual(4613732, challenge.RunChallenge());
 
         }
 
@@ -55,11 +49,17 @@ namespace Challenges1To10
     {
         //13195 are 5, 7, 13 and 29.
         [Test]
-        public void FactorOfFirst10Primes()
+        public void LargestFactorOf13195()
         {
-            Challenge3 challenge3 = new Challenge3();
-            challenge3.InputNumber = 13195;
-            Assert.AreEqual(29, challenge3.RunChallenge());
+            var challenge = new Challenge3() { InputNumber = 13195 };
+            Assert.AreEqual(29, challenge.RunChallenge());
+        }
+
+        [Test]
+        public void LargestFactorOf600851475143()
+        {
+            var challenge = new Challenge3() { InputNumber = 600851475143 };
+            Assert.AreEqual(6857, challenge.RunChallenge());
         }
     }
 
@@ -67,18 +67,13 @@ namespace Challenges1To10
     class Challenge4Tests
     {
         [Test]
-        public void TestPallindromeTrue()
+        public void Largest3DigitPalindrome()
         {
-            Challenge4 challenge4 = new Challenge4();
-            Assert.IsTrue(challenge4.IsPalindrome(10001));
+            var challenge = new Challenge4();
+            Assert.AreEqual(906609, challenge.RunChallenge());
         }
 
-        [Test]
-        public void TestPallindromeFalse()
-        {
-            Challenge4 challenge4 = new Challenge4();
-            Assert.IsFalse(challenge4.IsPalindrome(10002));
-        }
+
     }
 
     [TestFixture]
@@ -89,8 +84,7 @@ namespace Challenges1To10
         public void LargestDivisorOf10natNums()
         {
 
-            Challenge5 challenge = new Challenge5();
-            challenge.Divisors = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            var challenge = new Challenge5() { Divisors = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 } } ;
 
             Assert.AreEqual(2520, challenge.RunChallenge());
         }

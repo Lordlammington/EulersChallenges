@@ -30,7 +30,6 @@ namespace Functions
 
                 // =+ +=
 
-                long foo;
             }
 
             return result;

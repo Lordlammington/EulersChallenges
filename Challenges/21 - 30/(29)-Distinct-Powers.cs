@@ -25,7 +25,6 @@ namespace Challenges21To30
                 }
             }
             //0.1 + 0.2 = 0.30000000000004?
-            BigInteger foo;
 
 
             var distinct = allProducts.Distinct();

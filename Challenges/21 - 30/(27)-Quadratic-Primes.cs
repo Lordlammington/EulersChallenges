@@ -33,7 +33,7 @@ namespace Challenges
 
                     foreach (var n in nList)
                     {
-                       long result = QuadraticEquation(a, b, n);
+                       long result = QuadraticEquation(a, b, (long)n);
 
                        if (!PrimeNumbers.CheckForPrime(result))
                        {
