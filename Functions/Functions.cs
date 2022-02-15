@@ -6,8 +6,7 @@ namespace Functions
     {
         public BigInteger Solve(BigInteger input)
         {
-
-            return 10;
+            return input;
         }
     }
 

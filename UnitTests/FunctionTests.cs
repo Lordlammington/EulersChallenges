@@ -188,7 +188,7 @@ namespace FunctionTests
             [Test]
             public void TestColin()
             {
-                Assert.AreEqual(53, Word.wordToScore("COLIN"));
+                Assert.AreEqual(53, Word.WordToScore("COLIN"));
             }
         }
 

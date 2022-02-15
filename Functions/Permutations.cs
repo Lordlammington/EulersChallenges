@@ -9,7 +9,8 @@ namespace Functions
 {
     public class Permutations
     {
-		public static List<char[]> _Combinations = new();
+        // ReSharper disable once InconsistentNaming
+        public static List<char[]> _Combinations = new();
 
 		public static void Start(string input)
 		{
@@ -20,20 +21,9 @@ namespace Functions
 
 		private static void Swap(ref char a, ref char b)
 		{
-			char tmp = a;
-			a = b;
-			b = tmp;
-		}
+			(a, b) = (b, a);
+        }
 
-		// SwapUsingBitWise could be used instead of Swap as in the original solution.
-		private static void SwapUsingBitWise(ref char a, ref char b)
-		{
-			if (a == b)
-				return;
-			a ^= b;
-			b ^= a;
-			a ^= b;
-		}
 
 		private static void Permute(char[] elements, int recursionDepth, int maxDepth)
 		{

@@ -11,7 +11,7 @@ namespace Functions
     {
         public static List<long> ListOfDigits(BigInteger inputNumber)
         {
-            List<long> everyDigit = new List<long>();
+            var everyDigit = new List<long>();
 
             while (!inputNumber.IsZero)
             {
@@ -27,7 +27,7 @@ namespace Functions
 
         public static long ListOfDigitsSummed(BigInteger inputNumber)
         {
-            List<long> everyDigit = new List<long>();
+            var everyDigit = new List<long>();
 
             while (!inputNumber.IsZero)
             {

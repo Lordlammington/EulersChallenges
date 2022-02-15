@@ -5,88 +5,79 @@ using System;
 namespace Challenges11To20
 {
     [TestFixture]
-    class Challenge11Test
-    {
+    internal class TestChallenge11 {
         [Test]
         public void Test4Adjacent()
         {
-            Challenge11 challenge11 = new Challenge11();
-            challenge11.AdjacentToFind = 4;
-            Assert.AreEqual(70600674, challenge11.RunChallenge());
+            var challenge = new Challenge11 { AdjacentToFind = 4 };
+            Assert.AreEqual(70600674, challenge.RunChallenge());
         }
     }
 
     [TestFixture]
-    public class Challenge12Test
+    internal class TestChallenge12
     {
         [Test]
         public void TriangleNumberWith5Divisors()
         {
-            Challenge12 challenge12 = new Challenge12();
-            challenge12._UpToDivisors = 5;
-            Assert.AreEqual(28, challenge12.RunChallenge());
+            var challenge = new Challenge12{ _UpToDivisors = 5};
+            Assert.AreEqual(28, challenge.RunChallenge());
         }
 
         [Test]
         public void TriangleNumberWith50Divisors()
         {
-            Challenge12 challenge12 = new Challenge12();
-            challenge12._UpToDivisors = 50;
-            Assert.AreEqual(25200, challenge12.RunChallenge());
+            var challenge = new Challenge12{ _UpToDivisors = 50};
+            Assert.AreEqual(25200, challenge.RunChallenge());
         }
 
         [Test]
         public void TriangleNumberWith500Divisors()
         {
-            Challenge12 challenge12 = new Challenge12();
-            challenge12._UpToDivisors = 500;
-            Assert.AreEqual(28, challenge12.RunChallenge());
+            var challenge = new Challenge12{ _UpToDivisors = 500};
+            Assert.AreEqual(28, challenge.RunChallenge());
         }
     }
 
     [TestFixture]
-    public class Challenge13Test
+    internal class TestChallenge13
     {
         [Test]
         public void First10DigitsOfNumber()
         {
-            Challenge13 challenge13 = new Challenge13();
-            challenge13.HowManyFirstDigits = 10;
-            Assert.AreEqual(5537376230, challenge13.RunChallenge());
+            var challenge = new Challenge13{ HowManyFirstDigits =  10};
+            Assert.AreEqual(5537376230, challenge.RunChallenge());
         }
     }
 
     [TestFixture]
-    class Challenge14Test
+    internal class TestChallenge14
     {
         [Test]
         public void LongestSequenceBelow10()
         {
-            Challenge14 challenge14 = new Challenge14();
-            challenge14.InputNumber = 10;
-            //The longest collatz conjecture below 10 is 9, with 19 steps - Wikipedia.
+            var challenge14 = new Challenge14{ InputNumber = 10};
+            //The longest Collatz conjecture below 10 is 9, with 19 steps - Wikipedia.
             Assert.AreEqual(9, challenge14.RunChallenge());
         }
 
         [Test]
         public void LongestSequenceBelow1000000()
         {
-            Challenge14 challenge14 = new Challenge14();
-            challenge14.InputNumber = 1000000;
-            //The longest collatz conjecture below 1000000 is ...
+            var challenge14 = new Challenge14{ InputNumber = 1000000 };
+            //The longest Collatz conjecture below 1000000 is ...
             Assert.AreEqual(837799, challenge14.RunChallenge());
         }
 
     }
 
     [TestFixture]
-    class Challenge15Test
+    internal class TestChallenge15
     {
         [Test]
         public void SizeTwoSquareNavigation()
         {
-            Challenge15 challenge = new Challenge15();
-            challenge.SizeOfSquare = 2;
+            var challenge = new Challenge15{SizeOfSquare = 2};
             Assert.AreEqual(6, challenge.RunChallenge());
         }
 
@@ -94,105 +85,100 @@ namespace Challenges11To20
         [Test]
         public void SizeTwentySquareNavigation()
         {
-            Challenge15 challenge = new Challenge15();
-            challenge.SizeOfSquare = 20;
+            var challenge = new Challenge15{SizeOfSquare = 20}; 
             Assert.AreEqual(137846528820, challenge.RunChallenge());
         }
     }
 
     [TestFixture]
-    class Challenge16Test
+    internal class TestChallenge16
     {
         [Test]
         public void TwoToThePowerOf15()
         {
-            Challenge16 challenge = new Challenge16();
-            challenge.ToThePowerOf = 15;
+            var challenge = new Challenge16{ToThePowerOf = 15};
             Assert.AreEqual(26, challenge.RunChallenge());
         }
         [Test]
         public void TwoToThePowerOf1000()
         {
-            Challenge16 challenge = new Challenge16();
-            challenge.ToThePowerOf = 1000;
+            var challenge = new Challenge16{ToThePowerOf = 1000};
             Assert.AreEqual(1366, challenge.RunChallenge());
         }
     }
 
     [TestFixture]
-    class Challenge17Test
+    internal class TestChallenge17
     {
         [Test]
         public void NumberLetterCountsTo5()
         {
-            Challenge17 challenge = new Challenge17();
-            challenge.CalculateInclusive = 5;
+            var challenge = new Challenge17{CalculateInclusive = 5};
             Assert.AreEqual(19, challenge.RunChallenge());
         }
         [Test]
         public void NumberLetterCountsTo1000()
         {
-            Challenge17 challenge = new Challenge17();
-            challenge.CalculateInclusive = 1000;
+            var challenge = new Challenge17{CalculateInclusive =  1000};
             Assert.AreEqual(21124, challenge.RunChallenge());
         }
     }
 
     [TestFixture]
-    class Challenge18Test
+    internal class TestChallenge18
     {
         [Test]
         public void TrianglePaths()
         {
-            Challenge18 challenge = new Challenge18();
+            var challenge = new Challenge18();
             Assert.AreEqual(10, challenge.RunChallenge());
         }
     }
 
     [TestFixture]
-    class Challenge19Test
+    internal class TestChallenge19
     {
         [Test]
-        public void Sundaysin100Years()
+        public void SundaysIn100Years()
         {
 
-            Challenge19 challenge = new Challenge19();
-
-            challenge._StartDate = new DateTime(1901, 1, 1);
-            challenge._EndDate = new DateTime(2000, 12, 31);
+            var challenge = new Challenge19
+            {
+                _StartDate = new DateTime(1901, 1, 1),
+                _EndDate = new DateTime(2000, 12, 31)
+            };
 
             Assert.AreEqual(171, challenge.RunChallenge());
         }
 
         [Test]
-        public void Sundaysin1Year()
+        public void SundaysIn1Year()
         {
 
-            Challenge19 challenge = new Challenge19();
-
-            challenge._StartDate = new DateTime(2020, 1, 1);
-            challenge._EndDate = new DateTime(2020, 12, 31);
+            var challenge = new Challenge19
+            {
+                _StartDate = new DateTime(2020, 1, 1),
+                _EndDate = new DateTime(2020, 12, 31)
+            };
 
             Assert.AreEqual(2, challenge.RunChallenge());
         }
     }
 
     [TestFixture]
-    class Challenge20Test
+    internal class TestChallenge20
     {
         [Test]
-        public void FalctorialOf10Digits()
+        public void FactorialOf10Digits()
         {
-            Challenge20 challenge = new Challenge20();
-            challenge._FactorialDigits = 10;
+            var challenge = new Challenge20 { _FactorialDigits = 10 };
             Assert.AreEqual(27, challenge.RunChallenge());
         }
 
         [Test]
-        public void FalctorialOf100Digits()
+        public void FactorialOf100Digits()
         {
-            Challenge20 challenge = new Challenge20();
-            challenge._FactorialDigits = 100;
+            var challenge = new Challenge20 { _FactorialDigits = 100 };
             Assert.AreEqual(648, challenge.RunChallenge());
         }
     }

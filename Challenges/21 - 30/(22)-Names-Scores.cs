@@ -26,7 +26,7 @@ namespace Challenges
             foreach (var name in _namesList.Select((value, index) => new { value, index }))
             {
 
-                long entryScore = Word.wordToScore(name.value) * (name.index + 1);
+                long entryScore = Word.WordToScore(name.value) * (name.index + 1);
 
                 totalScore += entryScore;
 

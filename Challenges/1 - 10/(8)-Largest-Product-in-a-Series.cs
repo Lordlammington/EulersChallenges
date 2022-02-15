@@ -13,8 +13,8 @@ namespace Challenges
 
         public BigInteger RunChallenge()
         {
-            List<long> bigListOfDigits = new();
-            List<long> allProductsOfAdjacent = new();
+            List<BigInteger> bigListOfDigits = new();
+            List<BigInteger> allProductsOfAdjacent = new();
 
             while (_thousandDigitNumber != 0)
             {

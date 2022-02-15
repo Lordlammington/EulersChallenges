@@ -12,14 +12,12 @@ namespace Functions
 
         public static BigInteger FactorialOf(long input)
         {
-            if( input < 0 )
+            switch (input)
             {
-                throw new ArgumentOutOfRangeException();
-            }
-
-            if (input == 0)
-            {
-                return 1;
+                case < 0:
+                    throw new ArgumentOutOfRangeException();
+                case 0:
+                    return 1;
             }
 
             BigInteger result = input;

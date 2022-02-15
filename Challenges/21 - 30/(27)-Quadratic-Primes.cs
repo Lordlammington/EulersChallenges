@@ -65,7 +65,7 @@ namespace Challenges
             return bHigh * aHigh;
         }
 
-        private long QuadraticEquation(long a, long b, long n)
+        private static long QuadraticEquation(long a, long b, long n)
         {
             return (n * n)+ (a * n) + b;
         }

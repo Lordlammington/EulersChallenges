@@ -4,142 +4,140 @@ using NUnit.Framework;
 namespace Challenges21To30
 {
     [TestFixture]
-    class Challenge21Test
+    internal class TestChallenge21
     {
         [Test]
         public void Amicable()
         {
-            Challenge21 challenge = new Challenge21();
+            var challenge = new Challenge21();
             Assert.AreEqual(31626, challenge.RunChallenge());
         }
     }
 
     [TestFixture]
-    class Challenge22Test
+    internal class TestChallenge22
     {
         [Test]
         public void NameScores()
         {
-            Challenge22 challenge = new Challenge22();
+            var challenge = new Challenge22();
             Assert.AreEqual(871198282, challenge.RunChallenge());
         }
     }
 
     [TestFixture]
-    class Challenge23Test
+    internal class TestChallenge23
     {
         [Test]
         public void NonAbundantSums()
         {
-            Challenge23 challenge = new Challenge23();
+            var challenge = new Challenge23();
             Assert.AreEqual(4179871, challenge.RunChallenge());
         }
     }
 
     [TestFixture]
-    class Challenge24Test
+    internal class TestChallenge24
     {
         [Test]
         public void Template()
         {
-            Challenge24 challenge = new Challenge24();
+            var challenge = new Challenge24();
             Assert.AreEqual(10, challenge.RunChallenge());
         }
     }
 
     [TestFixture]
-    class Challenge25Test
+    internal class TestChallenge25
     {
         [Test]
         public void Template()
         {
-            Challenge25 challenge = new Challenge25();
+            var challenge = new Challenge25();
             Assert.AreEqual(4782, challenge.RunChallenge());
         }
     }
 
     [TestFixture]
-    class Challenge26Test
+    internal class TestChallenge26
     {
         [Test]
         public void ReciprocalCycles()
         {
-            Challenge26 challenge = new Challenge26();
+            var challenge = new Challenge26();
             Assert.AreEqual(983, challenge.RunChallenge());
         }
     }
 
     [TestFixture]
-    class Challenge27Test
+    internal class TestChallenge27
     {
         [Test]
-        public void ABNThing()
+        public void QuadraticPrimes()
         {
-            Challenge27 challenge = new Challenge27();
+            var challenge = new Challenge27();
             Assert.AreEqual(-59231, challenge.RunChallenge());
         }
     }
 
     [TestFixture]
-    class Challenge28Test
+    internal class TestChallenge28
     {
 
         [Test]
         public void FiveGridSize()
         {
-            Challenge28 challenge = new Challenge28();
-            challenge.sizeofGrid = 5;
+            var challenge = new Challenge28
+            {
+                sizeofGrid = 5
+            };
             Assert.AreEqual(101, challenge.RunChallenge());
         }
 
         [Test]
-        public void OneThousandGridsize()
+        public void OneThousandGridSize()
         {
-            Challenge28 challenge = new Challenge28();
-            challenge.sizeofGrid = 1001;
+            var challenge = new Challenge28
+            {
+                sizeofGrid = 1001
+            };
             Assert.AreEqual(669171001, challenge.RunChallenge());
         }
     }
 
     [TestFixture]
-    class Challenge29Test
+    internal class TestChallenge29
     {
         [Test]
         public void OneHundred()
         {
-            Challenge29 challenge = new Challenge29();
-            challenge.Ceiling = 100;
+            var challenge = new Challenge29 { Ceiling = 100 };
             Assert.AreEqual(9183, challenge.RunChallenge());
         }
 
         [Test]
         public void Five()
         {
-            Challenge29 challenge = new Challenge29();
-            challenge.Ceiling = 5;
+            var challenge = new Challenge29 { Ceiling = 5 };
             Assert.AreEqual(15, challenge.RunChallenge());
         }
     }
 
     [TestFixture]
-    class Challenge30Test
+    internal class TestChallenge30
     {
         [Test]
-        public void ExponentisFour()
+        public void ExponentIs4()
         {
-            Challenge30 challenge = new Challenge30();
-            challenge._exponent = 4;
+            var challenge = new Challenge30 { Exponent = 4 };
             Assert.AreEqual(19316, challenge.RunChallenge());
         }
 
         [Test]
-        public void ExponentisFive()
+        public void ExponentIs5()
         {
-            Challenge30 challenge = new Challenge30();
-            challenge._exponent = 5;
+            var challenge = new Challenge30 { Exponent = 5 };
             Assert.AreEqual(443839, challenge.RunChallenge());
         }
     }
-
 }
-

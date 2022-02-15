@@ -8,7 +8,6 @@ namespace Challenges
     public class Challenge2 : IRunChallenge
     {
         public int MaxFibValue { get; set; }
-
         public BigInteger RunChallenge()
         {
             return Fibonacci.Sequence()

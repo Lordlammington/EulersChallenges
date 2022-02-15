@@ -12,10 +12,10 @@ namespace Functions
     {
         public static long Count(long input)
         {
-            int numberOfDivisors = 0;
-            int sqrt = (int) Math.Sqrt(input);
+            var numberOfDivisors = 0;
+            var sqrt = (int) Math.Sqrt(input);
 
-            for (int i = 1; i <= sqrt; i++)
+            for (var i = 1; i <= sqrt; i++)
             {
                 if (input % i == 0)
                 {
@@ -33,9 +33,9 @@ namespace Functions
 
         public static List<long> List(long input)
         {
-            List<long> listOfOfDivisors = new List<long>();
+            var listOfOfDivisors = new List<long>();
 
-            for (int i = 1; i <= input; i++)
+            for (var i = 1; i <= input; i++)
             {
                 if (input % i == 0)
                 {
@@ -48,9 +48,9 @@ namespace Functions
 
         public static bool IsPerfectNumber(long input)
         {
-            List<long> listOfOfDivisors = new List<long>();
+            var listOfOfDivisors = new List<long>();
 
-            for (int i = 1; i <= input; i++)
+            for (var i = 1; i <= input; i++)
             {
                 if (input % i == 0 && i != input)
                 {
@@ -69,9 +69,9 @@ namespace Functions
         }
         public static bool IsAbundantNumber(BigInteger input)
         {
-            List<long> listOfOfDivisors = new List<long>();
+            var listOfOfDivisors = new List<long>();
 
-            for (int i = 1; i <= input; i++)
+            for (var i = 1; i <= input; i++)
             {
                 if (input % i == 0 && i != input)
                 {

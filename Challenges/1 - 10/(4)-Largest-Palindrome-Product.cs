@@ -13,7 +13,7 @@ namespace Challenges
         {
             return AllProducts.ThreeDigitProducts()
                     .AsEnumerable()
-                    .Where(x => Palindriome.IsPalindrome(x))
+                    .Where(Palindriome.IsPalindrome)
                     .ToList()
                     .Max(); 
         }

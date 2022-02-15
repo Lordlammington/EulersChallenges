@@ -12,33 +12,27 @@ namespace Challenges
 {
     public class Challenge30 : IRunChallenge
     {
-        public long _exponent;
+        public long Exponent;
         public BigInteger RunChallenge()
         {
             //upper bound 354294
-            List<long> DigitSums = new List<long>();
+            var digitSums = new List<long>();
 
-            for (int i = 2; i < 354294; i++)
+            for (var i = 2; i < 354294; i++)
             {
-                var digitlist = InputNumberAs.ListOfDigits(i);
-                long powerSum = 0;
-
-                foreach (var digit in digitlist)
-                {
-                    powerSum = powerSum + (long)Math.Pow(digit, _exponent);
-
-                }
+                var listOfDigits = InputNumberAs.ListOfDigits(i);
+                var powerSum = listOfDigits.Sum(digit => (long) Math.Pow(digit, Exponent));
 
                 if (powerSum == i)
                 {
-                    DigitSums.Add(i);
+                    digitSums.Add(i);
                 }
 
             }
 
             //what is the maximum number?
 
-            return DigitSums.Sum();
+            return digitSums.Sum();
         }
     }
 }

@@ -8,10 +8,9 @@ namespace Functions
 {
     public class Word
     {
-
-        public static long wordToScore(string inputWord)
+        public static long WordToScore(string inputWord)
         {
-            Dictionary<char, long> wordScoreDictionary = new Dictionary<char, long>()
+            var wordScoreDictionary = new Dictionary<char, long>()
         {
            {'a' , 1 },
            {'b' , 2 },
@@ -41,15 +40,15 @@ namespace Functions
            {'z' , 27 }
         };
 
-            long Score = 0;
+            long score = 0;
 
-            foreach (char letter in inputWord.ToLower().ToCharArray())
+            foreach (var letter in inputWord.ToLower().ToCharArray())
             {
-                wordScoreDictionary.TryGetValue(letter, out long myValue);
-                Score = +myValue;
+                wordScoreDictionary.TryGetValue(letter, out var myValue);
+                score = +myValue;
             }
 
-            return Score;
+            return score;
         }
     }
 }
