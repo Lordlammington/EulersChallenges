@@ -21,7 +21,7 @@ namespace Challenges
             for (var i = 2; i < 354294; i++)
             {
                 var listOfDigits = InputNumberAs.ListOfDigits(i);
-                var powerSum = listOfDigits.Sum(digit => (long) Math.Pow(digit, Exponent));
+                var powerSum = listOfDigits.Sum(digit => (long) Exponents.Solve(digit, Exponent));
 
                 if (powerSum == i)
                 {

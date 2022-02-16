@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using Functions;
 using ProjectEuler;
 
 namespace Challenges21To30
@@ -21,7 +22,7 @@ namespace Challenges21To30
                 for (var b = 2; b <= Ceiling; b++)
                 {
                    
-                    allProducts.Add((BigInteger)Math.Pow(a,b));
+                    allProducts.Add(Exponents.Solve(a,b));
 
                 }
             }

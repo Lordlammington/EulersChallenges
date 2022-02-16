@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+using System;
 
 namespace Functions
 {
@@ -25,10 +26,9 @@ namespace Functions
 
         public static BigInteger Solve(BigInteger numerator, BigInteger exponent)
         {
-
             var runningTotal = numerator;
 
-            for (int i = 0; i <= exponent; i++)
+            for (int i = 1; i < exponent; i++)
             {
                 runningTotal *= numerator;
             }
@@ -36,4 +36,31 @@ namespace Functions
             return runningTotal;
         }
     }
+
+    public static class Factorial
+    {
+
+        public static BigInteger FactorialOf(long input)
+        {
+            switch (input)
+            {
+                case < 0:
+                    throw new ArgumentOutOfRangeException();
+                case 0:
+                    return 1;
+            }
+
+            BigInteger result = input;
+
+            for (int i = 1; i < input; i++)
+            {
+                result *= i;
+
+
+            }
+
+            return result;
+        }
+    }
+
 }
